@@ -36,7 +36,7 @@ toolchainManagement {
     }
 }
 
-rootProject.name = "diecast"
+rootProject.name = "pulse-sutra"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
