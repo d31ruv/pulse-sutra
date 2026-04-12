@@ -6,7 +6,6 @@ import androidx.compose.ui.text.googlefonts.Font
 import androidx.compose.ui.text.googlefonts.GoogleFont
 import d31ruv.pulse.sutra.R
 
-// Set of Material typography styles to start with
 val provider = GoogleFont.Provider(
     providerAuthority = "com.google.android.gms.fonts",
     providerPackage = "com.google.android.gms",
@@ -15,19 +14,18 @@ val provider = GoogleFont.Provider(
 
 val bodyFontFamily = FontFamily(
     Font(
-        googleFont = GoogleFont("EB Garamond"),
+        googleFont = GoogleFont("Manrope"),
         fontProvider = provider,
     )
 )
 
 val displayFontFamily = FontFamily(
     Font(
-        googleFont = GoogleFont("Montserrat"),
+        googleFont = GoogleFont("Manrope"),
         fontProvider = provider,
     )
 )
 
-// Default Material 3 typography values
 val baseline = Typography()
 
 val Typography = Typography(

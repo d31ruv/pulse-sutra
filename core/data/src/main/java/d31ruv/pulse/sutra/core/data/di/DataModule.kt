@@ -1,5 +1,7 @@
 package d31ruv.pulse.sutra.core.data.di
 
+import d31ruv.pulse.sutra.core.data.chant.repository.ChantDashboardRepository
+import d31ruv.pulse.sutra.core.data.chant.repository.DefaultChantDashboardRepository
 import d31ruv.pulse.sutra.core.data.utils.network.NetworkMonitor
 import d31ruv.pulse.sutra.core.data.utils.network.NetworkMonitorImpl
 import dagger.Binds
@@ -10,6 +12,11 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class DataModule {
+    @Binds
+    internal abstract fun bindsChantDashboardRepository(
+        impl: DefaultChantDashboardRepository,
+    ): ChantDashboardRepository
+
     @Binds
     internal abstract fun bindsNetworkMonitor(impl: NetworkMonitorImpl): NetworkMonitor
 }

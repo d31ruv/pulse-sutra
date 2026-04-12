@@ -44,3 +44,5 @@ include(":app")
 
 include(":core:common")
 include(":core:data")
+
+include(":feature:chant")
