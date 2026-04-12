@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.pulse.android.application)
     alias(libs.plugins.pulse.kotlin.compose)
     alias(libs.plugins.pulse.hilt)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -29,6 +30,7 @@ android {
 dependencies {
     implementation(projects.core.common)
     implementation(projects.core.data)
+    implementation(projects.feature.chant)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

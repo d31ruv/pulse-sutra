@@ -14,6 +14,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
     @Inject
     lateinit var networkMonitor: NetworkMonitor
 
@@ -22,8 +23,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val appState = rememberPulseSutraAppState(networkMonitor = networkMonitor)
-            PulseSutraTheme { PulseSutraApp(appState = appState) }
+            val appState = rememberPulseSutraAppState(
+                networkMonitor = networkMonitor,
+            )
+            PulseSutraTheme(
+                darkTheme = false,
+                dynamicColor = false,
+            ) {
+                PulseSutraApp(appState = appState)
+            }
         }
     }
 }
