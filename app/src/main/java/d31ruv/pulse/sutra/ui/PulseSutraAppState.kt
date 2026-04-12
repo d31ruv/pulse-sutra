@@ -13,8 +13,8 @@ import androidx.navigation.compose.rememberNavController
 import d31ruv.pulse.sutra.core.data.chant.model.PulseSutraTab
 import d31ruv.pulse.sutra.core.data.utils.network.NetworkMonitor
 import d31ruv.pulse.sutra.feature.chant.navigation.ChantRoute
+import d31ruv.pulse.sutra.feature.journal.navigation.JournalRoute
 import d31ruv.pulse.sutra.feature.target.navigation.TargetRoute
-import d31ruv.pulse.sutra.ui.navigation.JournalRoute
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map

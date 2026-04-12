@@ -47,3 +47,4 @@ include(":core:data")
 
 include(":feature:chant")
 include(":feature:target")
+include(":feature:journal")
