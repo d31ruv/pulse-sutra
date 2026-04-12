@@ -8,12 +8,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import d31ruv.pulse.sutra.feature.chant.navigation.ChantRoute
 import d31ruv.pulse.sutra.feature.chant.navigation.chantScreen
+import d31ruv.pulse.sutra.feature.target.navigation.targetScreen
 import d31ruv.pulse.sutra.ui.FeaturePlaceholder
 import kotlinx.serialization.Serializable
-
-/** Type-safe route for the Target Rituals destination. */
-@Serializable
-object TargetRoute
 
 /** Type-safe route for the Journal Reflections destination. */
 @Serializable
@@ -37,14 +34,7 @@ fun PulseSutraNavGraph(
         modifier = modifier,
     ) {
         chantScreen()
-
-        composable<TargetRoute> {
-            FeaturePlaceholder(
-                title = "Target Rituals",
-                message = "Set a sacred goal and keep your chanting rhythm grounded.",
-                modifier = Modifier.fillMaxSize(),
-            )
-        }
+        targetScreen()
 
         composable<JournalRoute> {
             FeaturePlaceholder(
