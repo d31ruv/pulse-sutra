@@ -31,6 +31,7 @@ dependencies {
     implementation(projects.core.common)
     implementation(projects.core.data)
     implementation(projects.feature.chant)
+    implementation(projects.feature.journal)
     implementation(projects.feature.target)
 
     implementation(libs.androidx.core.ktx)
