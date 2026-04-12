@@ -1,5 +1,5 @@
 import com.android.build.gradle.api.AndroidBasePlugin
-import d31ruv.diecast.libs
+import d31ruv.pulse.sutra.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply

@@ -30,19 +30,19 @@ tasks {
 gradlePlugin {
     plugins {
         register("androidApplication") {
-            id = libs.plugins.diecast.android.application.get().pluginId
+            id = libs.plugins.pulse.android.application.get().pluginId
             implementationClass = "AndroidApplicationConventionPlugin"
         }
         register("kotlinCompose") {
-            id = libs.plugins.diecast.kotlin.compose.get().pluginId
+            id = libs.plugins.pulse.kotlin.compose.get().pluginId
             implementationClass = "KotlinComposeConventionPlugin"
         }
         register("androidLibrary") {
-            id = libs.plugins.diecast.android.library.get().pluginId
+            id = libs.plugins.pulse.android.library.get().pluginId
             implementationClass = "AndroidLibraryConventionPlugin"
         }
         register("hilt") {
-            id = libs.plugins.diecast.hilt.get().pluginId
+            id = libs.plugins.pulse.hilt.get().pluginId
             implementationClass = "HiltConventionPlugin"
         }
     }

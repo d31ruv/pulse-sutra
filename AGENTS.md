@@ -7,11 +7,11 @@ This is a multi-module Android project using Kotlin DSL and convention plugins.
 - `app/`: Android application module (Compose UI, manifest, resources, app entrypoint).
 - `core/common/`: Shared core library code (dispatchers, DI helpers, reusable Android/Kotlin
   utilities).
-- `build-logic/`: Custom Gradle convention plugins (`diecast.android.application`,
-  `diecast.android.library`, `diecast.kotlin.compose`, `diecast.hilt`).
+- `build-logic/`: Custom Gradle convention plugins (`pulse.android.application`,
+  `pulse.android.library`, `pulse.kotlin.compose`, `pulse.hilt`).
 - `gradle/libs.versions.toml`: Central dependency and plugin version catalog.
 
-Use package root `d31ruv.diecast...` and mirror folder paths with package names.
+Use package root `d31ruv.pulse.sutra...` and mirror folder paths with package names.
 
 ## Build, Test, and Development Commands
 

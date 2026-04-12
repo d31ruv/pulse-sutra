@@ -1,14 +1,14 @@
 plugins {
-    alias(libs.plugins.diecast.android.application)
-    alias(libs.plugins.diecast.kotlin.compose)
-    alias(libs.plugins.diecast.hilt)
+    alias(libs.plugins.pulse.android.application)
+    alias(libs.plugins.pulse.kotlin.compose)
+    alias(libs.plugins.pulse.hilt)
 }
 
 android {
-    namespace = "d31ruv.diecast"
+    namespace = "d31ruv.pulse.sutra"
 
     defaultConfig {
-        applicationId = "d31ruv.diecast"
+        applicationId = "d31ruv.pulse.sutra"
         versionCode = 1
         versionName = "0.0.1" // X.Y.Z; X = Major, Y = minor, Z = Patch level
 
@@ -29,7 +29,6 @@ android {
 dependencies {
     implementation(projects.core.common)
     implementation(projects.core.data)
-    implementation(projects.feature.profile)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

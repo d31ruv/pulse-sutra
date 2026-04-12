@@ -1,5 +1,5 @@
 import com.android.build.api.dsl.CommonExtension
-import d31ruv.diecast.configureAndroidCompose
+import d31ruv.pulse.sutra.configureAndroidCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
