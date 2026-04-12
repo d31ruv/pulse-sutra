@@ -52,11 +52,11 @@ kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
 
-# used in :convention plugin diecast.kotlin.compose
+# used in :convention plugin pulse.kotlin.compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-# used in :convention plugin diecast.hilt
+# used in :convention plugin pulse.hilt
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 
@@ -73,7 +73,7 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 # registered in :build-logic:convention
-diecast-android-application = { id = "diecast.android.application" }
-diecast-kotlin-compose = { id = "diecast.kotlin.compose" }
-diecast-android-library = { id = "diecast.android.library" }
-diecast-hilt = { id = "diecast.hilt" }
+pulse-android-application = { id = "pulse.android.application" }
+pulse-kotlin-compose = { id = "pulse.kotlin.compose" }
+pulse-android-library = { id = "pulse.android.library" }
+pulse-hilt = { id = "pulse.hilt" }

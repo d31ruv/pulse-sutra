@@ -1,10 +1,10 @@
 plugins {
-    alias(libs.plugins.diecast.android.library)
-    alias(libs.plugins.diecast.hilt)
+    alias(libs.plugins.pulse.android.library)
+    alias(libs.plugins.pulse.hilt)
 }
 
 android {
-    namespace = "d31ruv.diecast.core.common"
+    namespace = "d31ruv.pulse.sutra.core.common"
 }
 
 dependencies {

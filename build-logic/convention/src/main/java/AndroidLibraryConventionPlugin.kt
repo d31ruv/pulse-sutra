@@ -1,5 +1,5 @@
 import com.android.build.api.dsl.LibraryExtension
-import d31ruv.diecast.configureKotlinAndroid
+import d31ruv.pulse.sutra.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
