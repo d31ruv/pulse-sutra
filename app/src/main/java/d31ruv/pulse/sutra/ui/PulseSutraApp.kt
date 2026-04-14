@@ -49,11 +49,14 @@ import d31ruv.pulse.sutra.ui.navigation.PulseSutraNavGraph
 fun PulseSutraApp(appState: PulseSutraAppState) {
     val isOffline by appState.isOffline.collectAsStateWithLifecycle()
     val selectedTab = appState.currentTab()
+    val isSettingsDestination = appState.isSettingsDestination()
 
     PulseSutraDashboard(
         isOffline = isOffline,
+        isSettingsDestination = isSettingsDestination,
         selectedTab = selectedTab,
         onTabSelected = appState::selectTab,
+        onSettingsClick = appState::openSettings,
         navGraph = {
             PulseSutraNavGraph(
                 navController = appState.navController,
@@ -68,8 +71,10 @@ fun PulseSutraApp(appState: PulseSutraAppState) {
 @Composable
 private fun PulseSutraDashboard(
     isOffline: Boolean,
+    isSettingsDestination: Boolean,
     selectedTab: PulseSutraTab,
     onTabSelected: (PulseSutraTab) -> Unit,
+    onSettingsClick: () -> Unit,
     navGraph: @Composable ColumnScope.() -> Unit,
 ) {
     Box(
@@ -86,7 +91,10 @@ private fun PulseSutraDashboard(
                 .padding(horizontal = 24.dp)
                 .padding(top = 16.dp, bottom = 136.dp),
         ) {
-            DashboardTopBar()
+            DashboardTopBar(
+                isSettingsDestination = isSettingsDestination,
+                onSettingsClick = onSettingsClick,
+            )
 
             if (isOffline) {
                 OfflineBadge(
@@ -108,6 +116,8 @@ private fun PulseSutraDashboard(
 
 @Composable
 private fun DashboardTopBar(
+    isSettingsDestination: Boolean,
+    onSettingsClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Row(
@@ -130,8 +140,12 @@ private fun DashboardTopBar(
             )
         }
 
-        IconButtonShell {
-            SettingsGlyph()
+        IconButtonShell(
+            modifier = Modifier.clickable(onClick = onSettingsClick),
+        ) {
+            SettingsGlyph(
+                tint = if (isSettingsDestination) Color(0xFF925600) else Color(0xFF8C8884),
+            )
         }
     }
 }
@@ -370,9 +384,10 @@ private fun SanctuaryMark() {
 }
 
 @Composable
-private fun SettingsGlyph() {
+private fun SettingsGlyph(
+    tint: Color,
+) {
     Canvas(modifier = Modifier.size(18.dp)) {
-        val tint = Color(0xFF8C8884)
         val strokeWidth = 1.6.dp.toPx()
         drawCircle(
             color = tint,
