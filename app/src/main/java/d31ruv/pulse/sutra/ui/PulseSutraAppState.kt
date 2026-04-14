@@ -14,6 +14,7 @@ import d31ruv.pulse.sutra.core.data.chant.model.PulseSutraTab
 import d31ruv.pulse.sutra.core.data.utils.network.NetworkMonitor
 import d31ruv.pulse.sutra.feature.chant.navigation.ChantRoute
 import d31ruv.pulse.sutra.feature.journal.navigation.JournalRoute
+import d31ruv.pulse.sutra.feature.settings.navigation.SettingsRoute
 import d31ruv.pulse.sutra.feature.target.navigation.TargetRoute
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
@@ -55,12 +56,15 @@ class PulseSutraAppState(
     fun currentTab(): PulseSutraTab {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val destination: NavDestination? = navBackStackEntry?.destination
-        return when {
-            destination?.hasRoute<ChantRoute>() == true -> PulseSutraTab.Chant
-            destination?.hasRoute<TargetRoute>() == true -> PulseSutraTab.Target
-            destination?.hasRoute<JournalRoute>() == true -> PulseSutraTab.Journal
-            else -> PulseSutraTab.Chant
-        }
+        return destination.asPulseSutraTab()
+            ?: navController.previousBackStackEntry?.destination.asPulseSutraTab()
+            ?: PulseSutraTab.Chant
+    }
+
+    @Composable
+    fun isSettingsDestination(): Boolean {
+        val navBackStackEntry by navController.currentBackStackEntryAsState()
+        return navBackStackEntry?.destination?.hasRoute<SettingsRoute>() == true
     }
 
     /** Navigates to the destination associated with [tab]. */
@@ -78,5 +82,21 @@ class PulseSutraAppState(
             launchSingleTop = true
             restoreState = true
         }
+    }
+
+    fun openSettings() {
+        if (navController.currentDestination?.hasRoute<SettingsRoute>() == true) {
+            return
+        }
+        navController.navigate(SettingsRoute) {
+            launchSingleTop = true
+        }
+    }
+
+    private fun NavDestination?.asPulseSutraTab(): PulseSutraTab? = when {
+        this?.hasRoute<ChantRoute>() == true -> PulseSutraTab.Chant
+        this?.hasRoute<TargetRoute>() == true -> PulseSutraTab.Target
+        this?.hasRoute<JournalRoute>() == true -> PulseSutraTab.Journal
+        else -> null
     }
 }
