@@ -10,6 +10,8 @@ This is a multi-module Android project using Kotlin DSL and convention plugins.
   utilities).
 - `core/data/`: Shared data layer code (repositories, data models, network utilities, DI
   bindings).
+- `core/designsystem/`: Shared design system (Material 3 theme, colors, typography, reusable 
+  UI components).
 - `feature/chant/`: Chant feature module (screen UI, feature navigation, ViewModel, feature-
   scoped Compose code).
 - `build-logic/`: Custom Gradle convention plugins (`pulse.android.application`,

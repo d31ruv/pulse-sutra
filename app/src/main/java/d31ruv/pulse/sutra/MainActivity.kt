@@ -8,7 +8,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import d31ruv.pulse.sutra.core.data.utils.network.NetworkMonitor
 import d31ruv.pulse.sutra.ui.PulseSutraApp
 import d31ruv.pulse.sutra.ui.rememberPulseSutraAppState
-import d31ruv.pulse.sutra.ui.theme.PulseSutraTheme
+import d31ruv.pulse.sutra.core.designsystem.theme.PulseSutraTheme
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
                 networkMonitor = networkMonitor,
             )
             PulseSutraTheme(
-                darkTheme = false,
+                darkTheme = true,
                 dynamicColor = false,
             ) {
                 PulseSutraApp(appState = appState)
