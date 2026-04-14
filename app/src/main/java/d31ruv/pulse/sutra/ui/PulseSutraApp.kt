@@ -18,11 +18,11 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.layout.widthIn
+
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -37,13 +37,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
+
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import d31ruv.pulse.sutra.core.data.chant.model.PulseSutraTab
-import d31ruv.pulse.sutra.ui.navigation.PulseSutraNavGraph
+import d31ruv.pulse.sutra.navigation.PulseSutraNavGraph
 
 @Composable
 fun PulseSutraApp(appState: PulseSutraAppState) {
@@ -146,49 +146,6 @@ private fun DashboardTopBar(
             SettingsGlyph(
                 tint = if (isSettingsDestination) Color(0xFF925600) else Color(0xFF8C8884),
             )
-        }
-    }
-}
-
-@Composable
-internal fun FeaturePlaceholder(
-    title: String,
-    message: String,
-    modifier: Modifier = Modifier,
-) {
-    Box(
-        modifier = modifier,
-        contentAlignment = Alignment.Center,
-    ) {
-        Surface(
-            modifier = Modifier.widthIn(max = 320.dp),
-            shape = RoundedCornerShape(28.dp),
-            color = Color(0xF2FFFBFF),
-            shadowElevation = 18.dp,
-        ) {
-            Column(
-                modifier = Modifier.padding(horizontal = 24.dp, vertical = 28.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
-                Text(
-                    text = title,
-                    style = MaterialTheme.typography.headlineSmall.copy(
-                        fontWeight = FontWeight.ExtraBold,
-                    ),
-                    color = Color(0xFF393835),
-                    textAlign = TextAlign.Center,
-                )
-                Spacer(modifier = Modifier.height(12.dp))
-                Text(
-                    text = message,
-                    style = MaterialTheme.typography.bodyLarge.copy(
-                        fontSize = 16.sp,
-                        lineHeight = 24.sp,
-                    ),
-                    color = Color(0xFF666461),
-                    textAlign = TextAlign.Center,
-                )
-            }
         }
     }
 }

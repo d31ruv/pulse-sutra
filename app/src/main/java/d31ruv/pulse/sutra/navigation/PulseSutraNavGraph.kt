@@ -1,4 +1,4 @@
-package d31ruv.pulse.sutra.ui.navigation
+package d31ruv.pulse.sutra.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

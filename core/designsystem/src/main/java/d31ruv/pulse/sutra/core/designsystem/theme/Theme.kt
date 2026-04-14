@@ -1,4 +1,4 @@
-package d31ruv.pulse.sutra.ui.theme
+package d31ruv.pulse.sutra.core.designsystem.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

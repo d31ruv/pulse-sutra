@@ -30,6 +30,7 @@ android {
 dependencies {
     implementation(projects.core.common)
     implementation(projects.core.data)
+    implementation(projects.core.designsystem)
     implementation(projects.feature.chant)
     implementation(projects.feature.journal)
     implementation(projects.feature.settings)
@@ -45,7 +46,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material3.adaptive.navigation.suite)
     implementation(libs.androidx.compose.material.icons)
-    implementation(libs.androidx.compose.ui.text.google.fonts)
+
     implementation(libs.androidx.core.splashscreen)
 
     testImplementation(libs.junit)
