@@ -9,11 +9,3 @@ data class ChantDashboardState(
     val primaryActionLabel: String,
     val manualActionLabel: String,
 )
-
-enum class PulseSutraTab(
-    val label: String,
-) {
-    Chant(label = "CHANT"),
-    Target(label = "TARGET"),
-    Journal(label = "JOURNAL"),
-}

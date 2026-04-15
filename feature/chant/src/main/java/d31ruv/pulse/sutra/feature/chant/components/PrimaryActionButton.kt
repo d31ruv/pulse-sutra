@@ -27,6 +27,7 @@ internal fun PrimaryActionButton(
     label: String,
     modifier: Modifier = Modifier,
 ) {
+    val colorScheme = MaterialTheme.colorScheme
     Row(
         modifier = modifier
             .fillMaxWidth()
@@ -39,7 +40,7 @@ internal fun PrimaryActionButton(
             .clip(CircleShape)
             .background(
                 brush = Brush.linearGradient(
-                    colors = listOf(Color(0xFFB56E03), Color(0xFFF49D37)),
+                    colors = listOf(colorScheme.primary, colorScheme.inversePrimary),
                 ),
             )
             .padding(horizontal = 28.dp),
