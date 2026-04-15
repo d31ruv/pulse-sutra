@@ -10,7 +10,7 @@ import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import d31ruv.pulse.sutra.core.data.chant.model.PulseSutraTab
+import d31ruv.pulse.sutra.components.PulseSutraTab
 import d31ruv.pulse.sutra.core.data.utils.network.NetworkMonitor
 import d31ruv.pulse.sutra.feature.chant.navigation.ChantRoute
 import d31ruv.pulse.sutra.feature.journal.navigation.JournalRoute
@@ -84,13 +84,10 @@ class PulseSutraAppState(
         }
     }
 
-    fun openSettings() {
-        if (navController.currentDestination?.hasRoute<SettingsRoute>() == true) {
-            return
-        }
-        navController.navigate(SettingsRoute) {
-            launchSingleTop = true
-        }
+    fun toggleSettings(checked: Boolean) {
+        if (checked) {
+            navController.navigate(SettingsRoute) { launchSingleTop = true }
+        } else navController.popBackStack()
     }
 
     private fun NavDestination?.asPulseSutraTab(): PulseSutraTab? = when {
