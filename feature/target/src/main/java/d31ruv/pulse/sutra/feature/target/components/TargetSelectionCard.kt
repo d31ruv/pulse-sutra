@@ -50,24 +50,19 @@ internal fun TargetSelectionCard(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.Bottom,
         ) {
-            SectionLabel(text = "REPETITION TARGET")
+            SectionLabel(text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.target.R.string.feature_target_repetition_target))
             Text(
                 text = state.selectedTarget.toString(),
-                style = MaterialTheme.typography.headlineLarge.copy(
-                    fontWeight = FontWeight.ExtraBold,
-                    fontSize = 36.sp,
-                    lineHeight = 40.sp,
-                    letterSpacing = (-1.8).sp,
-                ),
-                color = targetLabelColor,
+                style = MaterialTheme.typography.displaySmall,
+                color = MaterialTheme.colorScheme.primary,
             )
         }
 
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(12.dp))
-                .background(targetSurfaceColor)
+                .clip(MaterialTheme.shapes.medium)
+                .background(MaterialTheme.colorScheme.surfaceContainer)
                 .padding(horizontal = 24.dp, vertical = 28.dp),
             verticalArrangement = Arrangement.spacedBy(24.dp),
         ) {
@@ -99,8 +94,9 @@ internal fun TargetSlider(
     onTargetSelected: (Int) -> Unit,
 ) {
     var sliderValue by remember(state.selectedTarget) { mutableFloatStateOf(state.sliderPosition) }
-    val trackGradient = remember {
-        Brush.horizontalGradient(targetGoldGradient)
+    val colorScheme = MaterialTheme.colorScheme
+    val trackGradient = remember(colorScheme) {
+        Brush.horizontalGradient(listOf(colorScheme.primary, colorScheme.secondary))
     }
 
     Box(
@@ -115,7 +111,7 @@ internal fun TargetSlider(
             val strokeHeight = 8.dp.toPx()
             val y = size.height / 2f - strokeHeight / 2f
             drawRoundRect(
-                color = targetChipColor,
+                color = colorScheme.surfaceVariant,
                 topLeft = Offset(0f, y),
                 size = Size(size.width, strokeHeight),
                 cornerRadius = CornerRadius(strokeHeight, strokeHeight),
@@ -139,7 +135,7 @@ internal fun TargetSlider(
             valueRange = 0f..1f,
             steps = state.availableTargets.lastIndex - 1,
             colors = SliderDefaults.colors(
-                thumbColor = Color.White,
+                thumbColor = MaterialTheme.colorScheme.onPrimary,
                 activeTrackColor = Color.Transparent,
                 inactiveTrackColor = Color.Transparent,
                 activeTickColor = Color.Transparent,
@@ -156,13 +152,13 @@ internal fun QuickTargetChip(
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
 ) {
-    val containerColor = if (selected) targetLabelColor else targetChipColor
-    val textColor = if (selected) Color.White else targetTextColor
+    val containerColor = if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant
+    val textColor = if (selected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurface
     val chipModifier = if (selected) {
         modifier.shadow(
             elevation = 10.dp,
-            shape = RoundedCornerShape(12.dp),
-            spotColor = Color(0x33925600),
+            shape = MaterialTheme.shapes.medium,
+            spotColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.2f),
         )
     } else {
         modifier
@@ -170,7 +166,7 @@ internal fun QuickTargetChip(
 
     Box(
         modifier = chipModifier
-            .clip(RoundedCornerShape(12.dp))
+            .clip(MaterialTheme.shapes.medium)
             .background(containerColor)
             .clickable(onClick = onClick)
             .padding(vertical = 12.dp),
@@ -183,19 +179,15 @@ internal fun QuickTargetChip(
                     .padding(2.dp)
                     .border(
                         width = 2.dp,
-                        color = Color(0x1AFFFFFF),
-                        shape = RoundedCornerShape(10.dp),
+                        color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.1f),
+                        shape = MaterialTheme.shapes.medium,
                     ),
             )
         }
         Text(
             text = target.toString(),
             color = textColor,
-            style = MaterialTheme.typography.titleSmall.copy(
-                fontWeight = FontWeight.Bold,
-                fontSize = 14.sp,
-                lineHeight = 20.sp,
-            ),
+            style = MaterialTheme.typography.titleSmall,
         )
     }
 }

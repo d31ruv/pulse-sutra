@@ -42,7 +42,13 @@ On Windows, use `gradlew.bat` instead of `./gradlew`.
 - Navigation: Prefer type-safe Compose Navigation using `kotlinx.serialization` route objects
   (`@Serializable`) instead of raw string routes.
 - Modularization: New user-facing work should generally start in a dedicated `feature/*` module
-  rather than being implemented directly inside `app/`.
+  rather than being implemented directly inside `app/`. Break feature UI down further by extracting UI components into a dedicated `components/` package to prevent monolithic Screen files.
+- Design System: Always rely on the centralised design tokens provided by `:core:designsystem`. 
+    - Never use hardcoded colors (`Color(0xFF...)`), hardcoded fonts sizes/weights, or rigid shape corners.
+    - Exhaustively map properties to `MaterialTheme.colorScheme`, `MaterialTheme.typography`, and `MaterialTheme.shapes`.
+- String Externalization: Never use raw, hardcoded `Text(text = "...")` strings within Jetpack Compose definitions.
+    - Feature-specific strings must be defined inside each distinct feature module's `res/values/strings.xml`.
+    - Highly generic global elements (e.g. "Save", "Cancel", "History", "Settings") should be hoisted into the `:core:designsystem` module's `strings.xml`. Use `stringResource(R.string...)` respectively.
 - Follow Kotlin/Android naming:
     - Classes/objects/composables: `PascalCase`
     - Functions/variables: `camelCase`

@@ -49,24 +49,16 @@ internal fun ChantDashboardContent(
 
         Text(
             text = state.mantraLabel,
-            color = Color(0xFF925600),
-            style = MaterialTheme.typography.labelMedium.copy(
-                fontWeight = FontWeight.Bold,
-                letterSpacing = 2.sp,
-            ),
+            color = MaterialTheme.colorScheme.primary,
+            style = MaterialTheme.typography.labelMedium,
         )
 
         Spacer(modifier = Modifier.height(6.dp))
 
         Text(
             text = state.mantraName,
-            color = Color(0xFF393835),
-            style = MaterialTheme.typography.headlineLarge.copy(
-                fontWeight = FontWeight.ExtraBold,
-                fontSize = 30.sp,
-                lineHeight = 36.sp,
-                letterSpacing = (-0.75).sp,
-            ),
+            color = MaterialTheme.colorScheme.onSurface,
+            style = MaterialTheme.typography.displaySmall,
             textAlign = TextAlign.Center,
         )
 

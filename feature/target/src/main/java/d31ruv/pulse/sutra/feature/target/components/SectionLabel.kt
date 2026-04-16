@@ -10,10 +10,7 @@ import androidx.compose.ui.unit.sp
 internal fun SectionLabel(text: String) {
     Text(
         text = text,
-        style = MaterialTheme.typography.labelSmall.copy(
-            fontWeight = FontWeight.Bold,
-            letterSpacing = 1.5.sp,
-        ),
-        color = targetLabelColor,
+        style = MaterialTheme.typography.labelSmall,
+        color = MaterialTheme.colorScheme.primary,
     )
 }

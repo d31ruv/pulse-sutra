@@ -15,22 +15,14 @@ internal fun SettingsHeader() {
         verticalArrangement = Arrangement.spacedBy(6.dp),
     ) {
         Text(
-            text = "Preferences",
-            style = MaterialTheme.typography.headlineLarge.copy(
-                fontWeight = FontWeight.ExtraBold,
-                fontSize = 36.sp,
-                lineHeight = 40.sp,
-                letterSpacing = (-0.9).sp,
-            ),
-            color = settingsTextColor,
+            text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.designsystem.R.string.core_designsystem_preferences),
+            style = MaterialTheme.typography.displaySmall,
+            color = MaterialTheme.colorScheme.onSurface,
         )
         Text(
-            text = "Tailor your meditation environment to your rhythm.",
-            style = MaterialTheme.typography.bodyLarge.copy(
-                fontSize = 14.sp,
-                lineHeight = 20.sp,
-            ),
-            color = settingsSubtleTextColor,
+            text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.settings.R.string.feature_settings_tailor_environment),
+            style = MaterialTheme.typography.bodyLarge,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
     }
 }

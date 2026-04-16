@@ -27,6 +27,7 @@ internal fun ChantCounter(
     targetCount: Int,
     modifier: Modifier = Modifier,
 ) {
+    val colorScheme = MaterialTheme.colorScheme
     Box(
         modifier = modifier.size(320.dp),
         contentAlignment = Alignment.Center,
@@ -38,7 +39,7 @@ internal fun ChantCounter(
             val topLeft = Offset(inset, inset)
 
             drawArc(
-                color = Color(0xFFE7E2DB),
+                color = colorScheme.surfaceVariant,
                 startAngle = 0f,
                 sweepAngle = 360f,
                 useCenter = false,
@@ -49,7 +50,7 @@ internal fun ChantCounter(
 
             listOf(249f, 339f, 69f, 159f).forEach { startAngle ->
                 drawArc(
-                    color = Color(0xFF9F6202),
+                    color = colorScheme.primary,
                     startAngle = startAngle,
                     sweepAngle = 42f,
                     useCenter = false,
@@ -69,13 +70,8 @@ internal fun ChantCounter(
         ) {
             Text(
                 text = currentCount.toString(),
-                color = Color(0xFF393835),
-                style = MaterialTheme.typography.displayLarge.copy(
-                    fontWeight = FontWeight.ExtraLight,
-                    fontSize = 126.sp,
-                    lineHeight = 126.sp,
-                    letterSpacing = (-6.4).sp,
-                ),
+                color = MaterialTheme.colorScheme.onSurface,
+                style = MaterialTheme.typography.displayLarge,
             )
 
             Row(
@@ -83,19 +79,14 @@ internal fun ChantCounter(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    text = "TARGET",
-                    color = Color(0xFF666461),
-                    style = MaterialTheme.typography.labelMedium.copy(
-                        fontWeight = FontWeight.SemiBold,
-                        letterSpacing = 1.2.sp,
-                    ),
+                    text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.designsystem.R.string.core_designsystem_target),
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    style = MaterialTheme.typography.labelMedium,
                 )
                 Text(
                     text = targetCount.toString(),
-                    color = Color(0xFF925600),
-                    style = MaterialTheme.typography.labelMedium.copy(
-                        fontWeight = FontWeight.Bold,
-                    ),
+                    color = MaterialTheme.colorScheme.primary,
+                    style = MaterialTheme.typography.labelMedium,
                 )
             }
         }

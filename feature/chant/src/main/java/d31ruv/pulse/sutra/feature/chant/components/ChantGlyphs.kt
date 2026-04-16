@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 internal fun PlayGlyph() {
+    val colorScheme = androidx.compose.material3.MaterialTheme.colorScheme
     Canvas(modifier = Modifier.size(14.dp)) {
         val path = Path().apply {
             moveTo(size.width * 0.2f, size.height * 0.15f)
@@ -21,14 +22,15 @@ internal fun PlayGlyph() {
             lineTo(size.width * 0.2f, size.height * 0.85f)
             close()
         }
-        drawPath(path = path, color = Color.White)
+        drawPath(path = path, color = colorScheme.onPrimary)
     }
 }
 
 @Composable
 internal fun PlusGlyph() {
+    val colorScheme = androidx.compose.material3.MaterialTheme.colorScheme
     Canvas(modifier = Modifier.size(12.dp)) {
-        val tint = Color(0xFF666461)
+        val tint = colorScheme.onSurfaceVariant
         val strokeWidth = 1.8.dp.toPx()
         drawLine(
             color = tint,
@@ -49,8 +51,9 @@ internal fun PlusGlyph() {
 
 @Composable
 internal fun TimerGlyph() {
+    val colorScheme = androidx.compose.material3.MaterialTheme.colorScheme
     Canvas(modifier = Modifier.size(16.dp)) {
-        val tint = Color(0xFF8C8884)
+        val tint = colorScheme.onSurfaceVariant
         val strokeWidth = 1.8.dp.toPx()
         drawCircle(
             color = tint,
@@ -83,9 +86,10 @@ internal fun TimerGlyph() {
 
 @Composable
 internal fun StopGlyph() {
+    val colorScheme = androidx.compose.material3.MaterialTheme.colorScheme
     Canvas(modifier = Modifier.size(12.dp)) {
         drawRect(
-            color = Color(0xFFCA4E38),
+            color = colorScheme.error,
             topLeft = Offset(size.width * 0.18f, size.height * 0.18f),
             size = Size(size.width * 0.64f, size.height * 0.64f),
             style = Stroke(width = 1.6.dp.toPx()),

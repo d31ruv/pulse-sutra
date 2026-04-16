@@ -33,15 +33,10 @@ internal fun HistorySection(
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
         Text(
-            text = "History",
+            text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.designsystem.R.string.core_designsystem_history),
             modifier = Modifier.padding(start = 32.dp),
-            style = MaterialTheme.typography.headlineSmall.copy(
-                fontWeight = FontWeight.Bold,
-                fontSize = 16.sp,
-                lineHeight = 24.sp,
-                letterSpacing = (-0.4).sp,
-            ),
-            color = journalTextColor,
+            style = MaterialTheme.typography.titleLarge,
+            color = MaterialTheme.colorScheme.onSurface,
         )
 
         entries.forEach { entry ->
@@ -59,11 +54,11 @@ private fun SessionHistoryCard(
             .fillMaxWidth()
             .shadow(
                 elevation = 24.dp,
-                shape = RoundedCornerShape(12.dp),
-                spotColor = Color(0x08925600),
+                shape = MaterialTheme.shapes.medium,
+                spotColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.05f),
             )
-            .clip(RoundedCornerShape(12.dp))
-            .background(journalCardColor)
+            .clip(MaterialTheme.shapes.medium)
+            .background(MaterialTheme.colorScheme.surfaceContainer)
             .padding(20.dp),
         horizontalArrangement = Arrangement.spacedBy(24.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -72,7 +67,7 @@ private fun SessionHistoryCard(
             modifier = Modifier
                 .size(56.dp)
                 .clip(CircleShape)
-                .background(journalChipColor),
+                .background(MaterialTheme.colorScheme.surfaceVariant),
             contentAlignment = Alignment.Center,
         ) {
             HistoryMandalaIcon()
@@ -90,21 +85,14 @@ private fun SessionHistoryCard(
                 Text(
                     text = entry.mantra,
                     modifier = Modifier.weight(1f),
-                    style = MaterialTheme.typography.titleMedium.copy(
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 18.sp,
-                        lineHeight = 28.sp,
-                    ),
-                    color = journalTextColor,
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.onSurface,
                 )
                 Spacer(modifier = Modifier.width(12.dp))
                 Text(
                     text = entry.timeLabel,
-                    style = MaterialTheme.typography.labelSmall.copy(
-                        fontWeight = FontWeight.Medium,
-                        letterSpacing = 0.5.sp,
-                    ),
-                    color = journalSubtleTextColor,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
 
@@ -113,7 +101,7 @@ private fun SessionHistoryCard(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 SessionHistoryMeta(
-                    text = "${entry.chantCount} Chants",
+                    text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.journal.R.string.feature_journal_chants_format, entry.chantCount),
                     icon = { ChantCountGlyph() },
                 )
                 SessionHistoryMeta(
@@ -137,11 +125,8 @@ private fun SessionHistoryMeta(
         icon()
         Text(
             text = text,
-            style = MaterialTheme.typography.bodyMedium.copy(
-                fontSize = 14.sp,
-                lineHeight = 20.sp,
-            ),
-            color = journalSubtleTextColor,
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
     }
 }

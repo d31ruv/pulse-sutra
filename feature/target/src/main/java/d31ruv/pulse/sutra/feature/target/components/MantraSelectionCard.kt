@@ -29,23 +29,19 @@ internal fun MantraSelectionCard(
     Column(
         verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
-        SectionLabel(text = "CHOOSE MANTRA")
+        SectionLabel(text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.target.R.string.feature_target_choose_mantra))
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(12.dp))
-                .background(targetCardColor)
+                .clip(MaterialTheme.shapes.medium)
+                .background(MaterialTheme.colorScheme.surfaceContainer)
                 .padding(24.dp),
             verticalArrangement = Arrangement.spacedBy(18.dp),
         ) {
             Text(
                 text = state.selectedMantra,
-                style = MaterialTheme.typography.titleLarge.copy(
-                    fontWeight = FontWeight.Medium,
-                    fontSize = 20.sp,
-                    lineHeight = 28.sp,
-                ),
-                color = targetTextColor,
+                style = MaterialTheme.typography.titleLarge,
+                color = MaterialTheme.colorScheme.onSurface,
             )
             FlowRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -71,20 +67,16 @@ internal fun AssistChip(
     selected: Boolean,
     onClick: () -> Unit,
 ) {
-    val background = if (selected) targetLabelColor else targetChipColor
-    val content = if (selected) Color.White else targetTextColor
+    val background = if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant
+    val content = if (selected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurface
     Text(
         text = label,
         modifier = Modifier
-            .clip(RoundedCornerShape(999.dp))
+            .clip(androidx.compose.foundation.shape.CircleShape)
             .background(background)
             .clickable(onClick = onClick)
             .padding(horizontal = 12.dp, vertical = 6.dp),
         color = content,
-        style = MaterialTheme.typography.labelMedium.copy(
-            fontWeight = FontWeight.Medium,
-            fontSize = 12.sp,
-            lineHeight = 16.sp,
-        ),
+        style = MaterialTheme.typography.labelMedium,
     )
 }

@@ -35,7 +35,7 @@ internal fun PrimaryActionButton(
             .shadow(
                 elevation = 20.dp,
                 shape = CircleShape,
-                spotColor = Color(0x4D925600),
+                spotColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.3f),
             )
             .clip(CircleShape)
             .background(
@@ -51,12 +51,8 @@ internal fun PrimaryActionButton(
         Spacer(modifier = Modifier.width(12.dp))
         Text(
             text = label,
-            color = Color.White,
-            style = MaterialTheme.typography.titleMedium.copy(
-                fontWeight = FontWeight.Bold,
-                fontSize = 18.sp,
-                lineHeight = 28.sp,
-            ),
+            color = MaterialTheme.colorScheme.onPrimary,
+            style = MaterialTheme.typography.titleMedium,
         )
     }
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_settings_sensory_feedback">SENSORY FEEDBACK</string>
+    <string name="feature_settings_intelligent_counting">INTELLIGENT COUNTING</string>
+    <string name="feature_settings_environment">ENVIRONMENT</string>
+    <string name="feature_settings_data_privacy">DATA &amp; PRIVACY</string>
+    <string name="feature_settings_tailor_environment">Tailor your meditation environment to your rhythm.</string>
+    <string name="feature_settings_voice_sensitivity">Voice Sensitivity</string>
+    <string name="feature_settings_session_archive">Session Archive</string>
+    <string name="feature_settings_delete_history_warning">This will permanently delete all mantra history.</string>
+    <string name="feature_settings_clear_history">CLEAR\nHISTORY</string>
+    <string name="feature_settings_percentage_format">%1$d%%</string>
+</resources>

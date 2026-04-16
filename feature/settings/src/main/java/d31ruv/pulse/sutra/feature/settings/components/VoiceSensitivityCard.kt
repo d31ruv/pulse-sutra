@@ -36,8 +36,8 @@ internal fun VoiceSensitivityCard(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp))
-            .background(settingsSurfaceColor)
+            .clip(MaterialTheme.shapes.large)
+            .background(MaterialTheme.colorScheme.surface)
             .padding(horizontal = 14.dp, vertical = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
@@ -49,21 +49,15 @@ internal fun VoiceSensitivityCard(
                 SensitivityGlyph()
             }
             Text(
-                text = "Voice Sensitivity",
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.settings.R.string.feature_settings_voice_sensitivity),
                 modifier = Modifier.weight(1f),
-                style = MaterialTheme.typography.bodyLarge.copy(
-                    fontWeight = FontWeight.Medium,
-                    fontSize = 15.sp,
-                    lineHeight = 20.sp,
-                ),
-                color = settingsTextColor,
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onSurface,
             )
             Text(
-                text = "${(sliderValue * 100).toInt()}%",
-                style = MaterialTheme.typography.labelMedium.copy(
-                    fontWeight = FontWeight.Bold,
-                ),
-                color = settingsGold,
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.settings.R.string.feature_settings_percentage_format, (sliderValue * 100).toInt()),
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.primary,
             )
         }
 
@@ -74,9 +68,9 @@ internal fun VoiceSensitivityCard(
                 onSensitivityChanged(it)
             },
             colors = SliderDefaults.colors(
-                thumbColor = settingsGold,
-                activeTrackColor = settingsGold,
-                inactiveTrackColor = settingsChipColor,
+                thumbColor = MaterialTheme.colorScheme.primary,
+                activeTrackColor = MaterialTheme.colorScheme.primary,
+                inactiveTrackColor = MaterialTheme.colorScheme.surfaceVariant,
                 activeTickColor = Color.Transparent,
                 inactiveTickColor = Color.Transparent,
             ),
@@ -87,20 +81,14 @@ internal fun VoiceSensitivityCard(
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Text(
-                text = "Soft",
-                style = MaterialTheme.typography.bodySmall.copy(
-                    fontSize = 10.sp,
-                    lineHeight = 12.sp,
-                ),
-                color = settingsSubtleTextColor,
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.designsystem.R.string.core_designsystem_soft),
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
             Text(
-                text = "Loud",
-                style = MaterialTheme.typography.bodySmall.copy(
-                    fontSize = 10.sp,
-                    lineHeight = 12.sp,
-                ),
-                color = settingsSubtleTextColor,
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.designsystem.R.string.core_designsystem_loud),
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         }
     }

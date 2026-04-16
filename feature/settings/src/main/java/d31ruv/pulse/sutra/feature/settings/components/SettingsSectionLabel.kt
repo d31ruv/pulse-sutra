@@ -11,10 +11,7 @@ import androidx.compose.ui.unit.sp
 internal fun SettingsSectionLabel(text: String) {
     Text(
         text = text,
-        style = MaterialTheme.typography.labelSmall.copy(
-            fontWeight = FontWeight.Medium,
-            letterSpacing = 0.9.sp,
-        ),
-        color = Color(0xFFB7AEA4),
+        style = MaterialTheme.typography.labelSmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
     )
 }
