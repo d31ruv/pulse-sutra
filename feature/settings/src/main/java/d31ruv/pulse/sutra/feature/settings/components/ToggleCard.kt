@@ -34,8 +34,8 @@ internal fun ToggleCard(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp))
-            .background(settingsSurfaceColor)
+            .clip(MaterialTheme.shapes.large)
+            .background(MaterialTheme.colorScheme.surface)
             .padding(horizontal = 14.dp, vertical = 16.dp),
         horizontalArrangement = Arrangement.spacedBy(12.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -47,21 +47,14 @@ internal fun ToggleCard(
         ) {
             Text(
                 text = title,
-                style = MaterialTheme.typography.bodyLarge.copy(
-                    fontWeight = FontWeight.Medium,
-                    fontSize = 15.sp,
-                    lineHeight = 20.sp,
-                ),
-                color = settingsTextColor,
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onSurface,
             )
             if (subtitle != null) {
                 Text(
                     text = subtitle,
-                    style = MaterialTheme.typography.bodySmall.copy(
-                        fontSize = 10.sp,
-                        lineHeight = 12.sp,
-                    ),
-                    color = settingsSubtleTextColor,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
         }
@@ -69,10 +62,10 @@ internal fun ToggleCard(
             checked = checked,
             onCheckedChange = { onToggle() },
             colors = SwitchDefaults.colors(
-                checkedThumbColor = Color.White,
-                checkedTrackColor = settingsGold,
-                uncheckedThumbColor = Color.White,
-                uncheckedTrackColor = Color(0xFFE0DDD8),
+                checkedThumbColor = MaterialTheme.colorScheme.onPrimary,
+                checkedTrackColor = MaterialTheme.colorScheme.primary,
+                uncheckedThumbColor = MaterialTheme.colorScheme.secondary,
+                uncheckedTrackColor = MaterialTheme.colorScheme.surfaceVariant,
                 uncheckedBorderColor = Color.Transparent,
                 checkedBorderColor = Color.Transparent,
             ),
@@ -88,7 +81,7 @@ internal fun IconContainer(
         modifier = Modifier
             .size(28.dp)
             .clip(CircleShape)
-            .background(settingsCardColor),
+            .background(MaterialTheme.colorScheme.surfaceContainer),
         contentAlignment = Alignment.Center,
     ) {
         content()

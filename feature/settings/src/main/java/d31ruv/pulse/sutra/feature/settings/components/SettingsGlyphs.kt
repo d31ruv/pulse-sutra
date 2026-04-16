@@ -12,8 +12,9 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 internal fun VibrationGlyph() {
+    val colorScheme = androidx.compose.material3.MaterialTheme.colorScheme
     Canvas(modifier = Modifier.size(14.dp)) {
-        val tint = settingsGold
+        val tint = colorScheme.primary
         val strokeWidth = 1.6.dp.toPx()
         drawLine(
             color = tint,
@@ -62,8 +63,9 @@ internal fun VibrationGlyph() {
 
 @Composable
 internal fun SoundGlyph() {
+    val colorScheme = androidx.compose.material3.MaterialTheme.colorScheme
     Canvas(modifier = Modifier.size(14.dp)) {
-        val tint = settingsGold
+        val tint = colorScheme.primary
         val strokeWidth = 1.6.dp.toPx()
         drawLine(
             color = tint,
@@ -107,8 +109,9 @@ internal fun SoundGlyph() {
 
 @Composable
 internal fun VoiceGlyph() {
+    val colorScheme = androidx.compose.material3.MaterialTheme.colorScheme
     Canvas(modifier = Modifier.size(14.dp)) {
-        val tint = settingsGold
+        val tint = colorScheme.primary
         val strokeWidth = 1.6.dp.toPx()
         drawLine(
             color = tint,
@@ -145,12 +148,13 @@ internal fun VoiceGlyph() {
 
 @Composable
 internal fun SensitivityGlyph() {
+    val colorScheme = androidx.compose.material3.MaterialTheme.colorScheme
     Canvas(modifier = Modifier.size(14.dp)) {
         val strokeWidth = 1.6.dp.toPx()
         listOf(0.2f, 0.42f, 0.64f, 0.84f).forEachIndexed { index, x ->
             val lineHeight = 0.3f + (index * 0.12f)
             drawLine(
-                color = settingsGold,
+                color = colorScheme.primary,
                 start = Offset(size.width * x, size.height * (1f - lineHeight)),
                 end = Offset(size.width * x, size.height * lineHeight),
                 strokeWidth = strokeWidth,
@@ -162,14 +166,15 @@ internal fun SensitivityGlyph() {
 
 @Composable
 internal fun MoonGlyph() {
+    val colorScheme = androidx.compose.material3.MaterialTheme.colorScheme
     Canvas(modifier = Modifier.size(14.dp)) {
         drawCircle(
-            color = settingsGold,
+            color = colorScheme.primary,
             radius = size.minDimension * 0.28f,
             center = Offset(size.width * 0.54f, size.height * 0.46f),
         )
         drawCircle(
-            color = settingsCardColor,
+            color = colorScheme.surfaceContainer,
             radius = size.minDimension * 0.28f,
             center = Offset(size.width * 0.64f, size.height * 0.36f),
         )

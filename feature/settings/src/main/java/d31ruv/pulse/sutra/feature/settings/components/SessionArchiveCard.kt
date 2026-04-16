@@ -25,8 +25,8 @@ internal fun SessionArchiveCard() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp))
-            .background(settingsDangerContainerColor)
+            .clip(MaterialTheme.shapes.large)
+            .background(MaterialTheme.colorScheme.errorContainer)
             .padding(horizontal = 14.dp, vertical = 16.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -36,43 +36,32 @@ internal fun SessionArchiveCard() {
             verticalArrangement = Arrangement.spacedBy(4.dp),
         ) {
             Text(
-                text = "Session Archive",
-                style = MaterialTheme.typography.titleSmall.copy(
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,
-                    lineHeight = 20.sp,
-                ),
-                color = settingsDangerTextColor,
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.settings.R.string.feature_settings_session_archive),
+                style = MaterialTheme.typography.titleSmall,
+                color = MaterialTheme.colorScheme.error,
             )
             Text(
-                text = "This will permanently delete all mantra history.",
-                style = MaterialTheme.typography.bodySmall.copy(
-                    fontSize = 11.sp,
-                    lineHeight = 14.sp,
-                ),
-                color = Color(0xFFA77A75),
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.settings.R.string.feature_settings_delete_history_warning),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onErrorContainer,
             )
         }
         Box(
             modifier = Modifier
                 .shadow(
                     elevation = 10.dp,
-                    shape = RoundedCornerShape(999.dp),
-                    spotColor = Color(0x33C2632F),
+                    shape = androidx.compose.foundation.shape.CircleShape,
+                    spotColor = MaterialTheme.colorScheme.error.copy(alpha = 0.2f),
                 )
-                .clip(RoundedCornerShape(999.dp))
-                .background(settingsActionColor)
+                .clip(androidx.compose.foundation.shape.CircleShape)
+                .background(MaterialTheme.colorScheme.error)
                 .padding(horizontal = 20.dp, vertical = 12.dp),
             contentAlignment = Alignment.Center,
         ) {
             Text(
-                text = "CLEAR\nHISTORY",
-                style = MaterialTheme.typography.labelSmall.copy(
-                    fontWeight = FontWeight.Bold,
-                    letterSpacing = 0.8.sp,
-                    lineHeight = 12.sp,
-                ),
-                color = Color.White,
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.settings.R.string.feature_settings_clear_history),
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onError,
             )
         }
     }

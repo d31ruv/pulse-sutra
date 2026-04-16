@@ -86,7 +86,7 @@ fun SettingsScreen(
         ) {
             SettingsHeader()
             ProfileCard(state = state)
-            SettingsSectionLabel(text = "SENSORY FEEDBACK")
+            SettingsSectionLabel(text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.settings.R.string.feature_settings_sensory_feedback))
             ToggleCard(
                 icon = { VibrationGlyph() },
                 title = "Vibration Feedback",
@@ -100,7 +100,7 @@ fun SettingsScreen(
                 onToggle = { state = state.toggleSound() },
             )
 
-            SettingsSectionLabel(text = "INTELLIGENT COUNTING")
+            SettingsSectionLabel(text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.settings.R.string.feature_settings_intelligent_counting))
             ToggleCard(
                 icon = { VoiceGlyph() },
                 title = "Voice-Activated Counting",
@@ -113,7 +113,7 @@ fun SettingsScreen(
                 onSensitivityChanged = { state = state.updateVoiceSensitivity(it) },
             )
 
-            SettingsSectionLabel(text = "ENVIRONMENT")
+            SettingsSectionLabel(text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.settings.R.string.feature_settings_environment))
             ToggleCard(
                 icon = { MoonGlyph() },
                 title = "Dark Mode",
@@ -121,7 +121,7 @@ fun SettingsScreen(
                 onToggle = { state = state.toggleDarkMode() },
             )
 
-            SettingsSectionLabel(text = "DATA & PRIVACY")
+            SettingsSectionLabel(text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.settings.R.string.feature_settings_data_privacy))
             SessionArchiveCard()
         }
     }

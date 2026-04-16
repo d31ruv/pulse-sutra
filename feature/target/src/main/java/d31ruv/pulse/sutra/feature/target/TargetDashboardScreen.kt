@@ -27,8 +27,6 @@ import d31ruv.pulse.sutra.feature.target.components.MantraSelectionCard
 import d31ruv.pulse.sutra.feature.target.components.RitualAnchorCard
 import d31ruv.pulse.sutra.feature.target.components.TargetSelectionCard
 
-private val targetTextColor = Color(0xFF393835)
-private val targetSubtleTextColor = Color(0xFF666461)
 
 data class TargetDashboardState(
     val mantras: List<String>,
@@ -109,23 +107,14 @@ internal fun TargetDashboardContent(
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
                 Text(
-                    text = "Set Your Intention",
-                    style = MaterialTheme.typography.headlineLarge.copy(
-                        fontWeight = FontWeight.ExtraBold,
-                        fontSize = 36.sp,
-                        lineHeight = 40.sp,
-                        letterSpacing = (-0.9).sp,
-                    ),
-                    color = targetTextColor,
+                    text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.target.R.string.feature_target_set_intention),
+                    style = MaterialTheme.typography.displaySmall,
+                    color = MaterialTheme.colorScheme.onSurface,
                 )
                 Text(
-                    text = "Configure your mantra session for a focused path.",
-                    style = MaterialTheme.typography.bodyLarge.copy(
-                        fontWeight = FontWeight.Medium,
-                        fontSize = 16.sp,
-                        lineHeight = 24.sp,
-                    ),
-                    color = targetSubtleTextColor,
+                    text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.target.R.string.feature_target_configure_mantra),
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
 

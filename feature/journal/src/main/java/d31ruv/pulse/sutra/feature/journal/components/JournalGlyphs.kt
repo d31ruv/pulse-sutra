@@ -11,15 +11,16 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 internal fun HistoryMandalaIcon() {
+    val colorScheme = androidx.compose.material3.MaterialTheme.colorScheme
     Canvas(modifier = Modifier.size(20.dp)) {
         val strokeWidth = 1.6.dp.toPx()
         drawCircle(
-            color = journalPrimaryColor,
+            color = colorScheme.primary,
             radius = size.minDimension * 0.34f,
             style = Stroke(width = strokeWidth),
         )
         drawCircle(
-            color = journalAccentColor,
+            color = colorScheme.tertiary,
             radius = size.minDimension * 0.12f,
         )
     }
@@ -27,15 +28,16 @@ internal fun HistoryMandalaIcon() {
 
 @Composable
 internal fun ChantCountGlyph() {
+    val colorScheme = androidx.compose.material3.MaterialTheme.colorScheme
     Canvas(modifier = Modifier.size(10.dp)) {
         val strokeWidth = 1.4.dp.toPx()
         drawCircle(
-            color = journalSubtleTextColor,
+            color = colorScheme.onSurfaceVariant,
             radius = size.minDimension * 0.34f,
             style = Stroke(width = strokeWidth),
         )
         drawCircle(
-            color = journalSubtleTextColor,
+            color = colorScheme.onSurfaceVariant,
             radius = size.minDimension * 0.08f,
         )
     }
@@ -43,22 +45,23 @@ internal fun ChantCountGlyph() {
 
 @Composable
 internal fun SessionDurationGlyph() {
+    val colorScheme = androidx.compose.material3.MaterialTheme.colorScheme
     Canvas(modifier = Modifier.size(10.dp)) {
         val strokeWidth = 1.4.dp.toPx()
         drawCircle(
-            color = journalSubtleTextColor,
+            color = colorScheme.onSurfaceVariant,
             radius = size.minDimension * 0.34f,
             style = Stroke(width = strokeWidth),
         )
         drawLine(
-            color = journalSubtleTextColor,
+            color = colorScheme.onSurfaceVariant,
             start = center,
             end = Offset(center.x, size.height * 0.24f),
             strokeWidth = strokeWidth,
             cap = StrokeCap.Round,
         )
         drawLine(
-            color = journalSubtleTextColor,
+            color = colorScheme.onSurfaceVariant,
             start = center,
             end = Offset(size.width * 0.66f, size.height * 0.5f),
             strokeWidth = strokeWidth,

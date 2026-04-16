@@ -29,7 +29,7 @@ internal fun RitualAnchorCard() {
         modifier = Modifier
             .fillMaxWidth()
             .height(140.dp)
-            .clip(RoundedCornerShape(12.dp))
+            .clip(MaterialTheme.shapes.medium)
             .background(
                 brush = Brush.verticalGradient(
                     colors = listOf(Color(0xFFF6EFE6), Color(0xFFE1E5E8), Color(0xFFB1B1AC)),
@@ -97,11 +97,8 @@ internal fun RitualAnchorCard() {
         ) {
             SparkGlyph()
             Text(
-                text = "RITUAL OF FOCUS",
-                style = MaterialTheme.typography.labelSmall.copy(
-                    fontWeight = FontWeight.Bold,
-                    letterSpacing = 1.sp,
-                ),
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.target.R.string.feature_target_ritual_of_focus),
+                style = MaterialTheme.typography.labelSmall,
                 color = Color(0xE6FFFFFF),
             )
         }

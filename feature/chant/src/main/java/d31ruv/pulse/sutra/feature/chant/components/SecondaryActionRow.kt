@@ -33,7 +33,7 @@ internal fun SecondaryActionRow(
     ) {
         SecondaryActionButton(
             label = manualActionLabel,
-            containerColor = Color(0xFFEBE8E3),
+            containerColor = MaterialTheme.colorScheme.surfaceVariant,
             modifier = Modifier.weight(1f),
         ) {
             PlusGlyph()
@@ -44,14 +44,14 @@ internal fun SecondaryActionRow(
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             MiniActionButton(
-                containerColor = Color(0xFFFDF9F5),
+                containerColor = MaterialTheme.colorScheme.surfaceContainerLowest,
                 modifier = Modifier.weight(1f),
             ) {
                 TimerGlyph()
             }
 
             MiniActionButton(
-                containerColor = Color(0x1AFD795A),
+                containerColor = MaterialTheme.colorScheme.errorContainer,
                 modifier = Modifier.weight(1f),
             ) {
                 StopGlyph()
@@ -70,7 +70,7 @@ private fun SecondaryActionButton(
     Row(
         modifier = modifier
             .height(56.dp)
-            .clip(RoundedCornerShape(12.dp))
+            .clip(MaterialTheme.shapes.medium)
             .background(containerColor)
             .padding(horizontal = 16.dp),
         horizontalArrangement = Arrangement.Center,
@@ -80,12 +80,8 @@ private fun SecondaryActionButton(
         Spacer(modifier = Modifier.width(8.dp))
         Text(
             text = label,
-            color = Color(0xFF393835),
-            style = MaterialTheme.typography.titleSmall.copy(
-                fontWeight = FontWeight.Bold,
-                fontSize = 14.sp,
-                lineHeight = 20.sp,
-            ),
+            color = MaterialTheme.colorScheme.onSurface,
+            style = MaterialTheme.typography.titleSmall,
         )
     }
 }
@@ -99,7 +95,7 @@ private fun MiniActionButton(
     Box(
         modifier = modifier
             .height(56.dp)
-            .clip(RoundedCornerShape(12.dp))
+            .clip(MaterialTheme.shapes.medium)
             .background(containerColor),
         contentAlignment = Alignment.Center,
     ) {

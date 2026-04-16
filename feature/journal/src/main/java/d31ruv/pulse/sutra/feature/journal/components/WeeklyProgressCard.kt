@@ -32,8 +32,8 @@ internal fun WeeklyProgressCard(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(12.dp))
-            .background(journalSurfaceColor)
+            .clip(MaterialTheme.shapes.medium)
+            .background(MaterialTheme.colorScheme.surface)
             .padding(horizontal = 32.dp, vertical = 32.dp),
     ) {
         Box(
@@ -42,7 +42,7 @@ internal fun WeeklyProgressCard(
                 .padding(end = 8.dp)
                 .size(128.dp)
                 .clip(CircleShape)
-                .background(Color(0x33F49D37)),
+                .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)),
         )
 
         Column(
@@ -50,23 +50,15 @@ internal fun WeeklyProgressCard(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
-                text = "WEEKLY PROGRESS",
-                style = MaterialTheme.typography.labelSmall.copy(
-                    fontWeight = FontWeight.Medium,
-                    letterSpacing = 0.5.sp,
-                ),
-                color = journalSubtleTextColor,
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.journal.R.string.feature_journal_weekly_progress),
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = "Total Chants\nThis Week",
-                style = MaterialTheme.typography.headlineLarge.copy(
-                    fontWeight = FontWeight.ExtraBold,
-                    fontSize = 36.sp,
-                    lineHeight = 40.sp,
-                    letterSpacing = (-0.9).sp,
-                ),
-                color = journalPrimaryColor,
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.journal.R.string.feature_journal_total_chants_week),
+                style = MaterialTheme.typography.displaySmall,
+                color = MaterialTheme.colorScheme.primary,
             )
             Spacer(modifier = Modifier.height(4.dp))
             Row(
@@ -75,22 +67,14 @@ internal fun WeeklyProgressCard(
             ) {
                 Text(
                     text = "%,d".format(state.weeklyTotal),
-                    style = MaterialTheme.typography.displayMedium.copy(
-                        fontWeight = FontWeight.ExtraBold,
-                        fontSize = 60.sp,
-                        lineHeight = 60.sp,
-                    ),
-                    color = journalTextColor,
+                    style = MaterialTheme.typography.displayMedium,
+                    color = MaterialTheme.colorScheme.onSurface,
                 )
                 Text(
-                    text = "repetitions",
+                    text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.journal.R.string.feature_journal_repetitions),
                     modifier = Modifier.padding(bottom = 8.dp),
-                    style = MaterialTheme.typography.bodyLarge.copy(
-                        fontWeight = FontWeight.Medium,
-                        fontSize = 16.sp,
-                        lineHeight = 24.sp,
-                    ),
-                    color = journalSubtleTextColor,
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
             Spacer(modifier = Modifier.height(32.dp))
@@ -119,9 +103,9 @@ private fun WeeklyBarChart(
                     .clip(RoundedCornerShape(999.dp))
                     .background(
                         color = if (index == highlightedDayIndex) {
-                            journalPrimaryColor
+                            MaterialTheme.colorScheme.primary
                         } else {
-                            Color(0x4DF49D37)
+                            MaterialTheme.colorScheme.primary.copy(alpha = 0.3f)
                         },
                     ),
             )

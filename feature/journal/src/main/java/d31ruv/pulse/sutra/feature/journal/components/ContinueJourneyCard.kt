@@ -33,10 +33,10 @@ internal fun ContinueJourneyCard() {
             .height(192.dp)
             .shadow(
                 elevation = 24.dp,
-                shape = RoundedCornerShape(16.dp),
+                shape = MaterialTheme.shapes.large,
                 spotColor = Color(0x1A000000),
             )
-            .clip(RoundedCornerShape(16.dp)),
+            .clip(MaterialTheme.shapes.large),
     ) {
         AsyncImage(
             model = zenImageUrl,
@@ -59,21 +59,13 @@ internal fun ContinueJourneyCard() {
                 .padding(24.dp),
         ) {
             Text(
-                text = "Continue your journey",
-                style = MaterialTheme.typography.bodyMedium.copy(
-                    fontWeight = FontWeight.Medium,
-                    fontSize = 14.sp,
-                    lineHeight = 20.sp,
-                ),
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.journal.R.string.feature_journal_continue_journey),
+                style = MaterialTheme.typography.bodyMedium,
                 color = Color(0xCCFFFFFF),
             )
             Text(
-                text = "Find Inner Peace Today",
-                style = MaterialTheme.typography.titleLarge.copy(
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp,
-                    lineHeight = 28.sp,
-                ),
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.journal.R.string.feature_journal_find_inner_peace),
+                style = MaterialTheme.typography.titleLarge,
                 color = Color.White,
             )
         }

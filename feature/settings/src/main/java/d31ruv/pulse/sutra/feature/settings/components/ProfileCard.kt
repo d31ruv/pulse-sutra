@@ -33,8 +33,8 @@ internal fun ProfileCard(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp))
-            .background(settingsSurfaceColor)
+            .clip(MaterialTheme.shapes.large)
+            .background(MaterialTheme.colorScheme.surface)
             .padding(horizontal = 16.dp, vertical = 16.dp),
         horizontalArrangement = Arrangement.spacedBy(14.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -43,7 +43,7 @@ internal fun ProfileCard(
             modifier = Modifier
                 .size(46.dp)
                 .clip(CircleShape)
-                .background(Color(0xFF514740)),
+                .background(MaterialTheme.colorScheme.surfaceVariant),
             contentAlignment = Alignment.Center,
         ) {
             ProfileGlyph()
@@ -53,20 +53,13 @@ internal fun ProfileCard(
         ) {
             Text(
                 text = state.profileName,
-                style = MaterialTheme.typography.titleMedium.copy(
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 18.sp,
-                    lineHeight = 24.sp,
-                ),
-                color = settingsTextColor,
+                style = MaterialTheme.typography.titleMedium,
+                color = MaterialTheme.colorScheme.onSurface,
             )
             Text(
                 text = state.profileLevel,
-                style = MaterialTheme.typography.labelSmall.copy(
-                    fontWeight = FontWeight.Medium,
-                    letterSpacing = 0.8.sp,
-                ),
-                color = settingsGold,
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.primary,
             )
         }
     }
@@ -74,15 +67,16 @@ internal fun ProfileCard(
 
 @Composable
 internal fun ProfileGlyph() {
+    val colorScheme = androidx.compose.material3.MaterialTheme.colorScheme
     Canvas(modifier = Modifier.size(22.dp)) {
         val strokeWidth = 1.4.dp.toPx()
         drawCircle(
-            color = Color.White,
+            color = colorScheme.primary,
             radius = size.minDimension * 0.18f,
             center = Offset(size.width / 2f, size.height * 0.34f),
         )
         drawArc(
-            color = Color.White,
+            color = colorScheme.primary,
             startAngle = 200f,
             sweepAngle = 140f,
             useCenter = false,
@@ -91,7 +85,7 @@ internal fun ProfileGlyph() {
             style = Stroke(width = strokeWidth, cap = StrokeCap.Round),
         )
         drawLine(
-            color = Color(0xFFF2C879),
+            color = colorScheme.tertiary,
             start = Offset(size.width * 0.2f, size.height * 0.82f),
             end = Offset(size.width * 0.8f, size.height * 0.82f),
             strokeWidth = strokeWidth,

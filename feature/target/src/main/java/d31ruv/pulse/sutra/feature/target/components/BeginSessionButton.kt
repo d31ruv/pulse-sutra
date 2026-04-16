@@ -34,20 +34,15 @@ internal fun BeginSessionButton() {
             )
             .clip(CircleShape)
             .background(
-                brush = Brush.linearGradient(targetGoldGradient),
+                brush = Brush.linearGradient(listOf(MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.secondary)),
             )
             .padding(horizontal = 32.dp, vertical = 20.dp),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Text(
-            text = "Begin Session",
-            style = MaterialTheme.typography.titleMedium.copy(
-                fontWeight = FontWeight.Bold,
-                fontSize = 18.sp,
-                lineHeight = 28.sp,
-                letterSpacing = (-0.45).sp,
-            ),
+            text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.target.R.string.feature_target_begin_session),
+            style = MaterialTheme.typography.titleMedium,
             color = Color.White,
             textAlign = TextAlign.Center,
         )
