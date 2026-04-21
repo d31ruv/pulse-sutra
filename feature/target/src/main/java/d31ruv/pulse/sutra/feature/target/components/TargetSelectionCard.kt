@@ -1,4 +1,4 @@
-package d31ruv.pulse.sutra.feature.target.components
+﻿package d31ruv.pulse.sutra.feature.target.components
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.SliderDefaults
@@ -31,9 +30,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import d31ruv.pulse.sutra.feature.target.TargetDashboardState
 import kotlin.math.roundToInt
 
@@ -50,7 +47,7 @@ internal fun TargetSelectionCard(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.Bottom,
         ) {
-            SectionLabel(text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.target.R.string.feature_target_repetition_target))
+            SectionLabel(text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.ui.R.string.core_ui_repetition_target))
             Text(
                 text = state.selectedTarget.toString(),
                 style = MaterialTheme.typography.displaySmall,
@@ -191,3 +188,5 @@ internal fun QuickTargetChip(
         )
     }
 }
+
+

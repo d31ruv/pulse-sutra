@@ -10,8 +10,8 @@ import kotlinx.serialization.Serializable
 object JournalRoute
 
 /** Registers the journal history screen in the given [NavGraphBuilder]. */
-fun NavGraphBuilder.journalScreen() {
+fun NavGraphBuilder.journalScreen(onSettingsClick: () -> Unit) {
     composable<JournalRoute> {
-        SessionHistoryScreen()
+        SessionHistoryScreen(onSettingsClick = onSettingsClick)
     }
 }

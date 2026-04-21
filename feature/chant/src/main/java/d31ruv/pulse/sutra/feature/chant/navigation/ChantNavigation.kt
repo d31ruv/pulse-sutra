@@ -16,8 +16,8 @@ object ChantRoute
 /**
  * Registers the Chant dashboard screen in the given [NavGraphBuilder].
  */
-fun NavGraphBuilder.chantScreen() {
+fun NavGraphBuilder.chantScreen(onSettingsClick: () -> Unit) {
     composable<ChantRoute> {
-        ChantDashboardScreen()
+        ChantDashboardScreen(onSettingsClick = onSettingsClick)
     }
 }

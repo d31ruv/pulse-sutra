@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="feature_target_set_intention">Set Your Intention</string>
-    <string name="feature_target_configure_mantra">Configure your mantra session for a focused path.</string>
-    <string name="feature_target_repetition_target">REPETITION TARGET</string>
-    <string name="feature_target_ritual_of_focus">RITUAL OF FOCUS</string>
-    <string name="feature_target_choose_mantra">CHOOSE MANTRA</string>
-    <string name="feature_target_begin_session">Begin Session</string>
-</resources>

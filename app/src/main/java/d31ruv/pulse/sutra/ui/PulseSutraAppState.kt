@@ -84,10 +84,8 @@ class PulseSutraAppState(
         }
     }
 
-    fun toggleSettings(checked: Boolean) {
-        if (checked) {
-            navController.navigate(SettingsRoute) { launchSingleTop = true }
-        } else navController.popBackStack()
+    fun navigateToSettings() {
+        navController.navigate(SettingsRoute) { launchSingleTop = true }
     }
 
     private fun NavDestination?.asPulseSutraTab(): PulseSutraTab? = when {

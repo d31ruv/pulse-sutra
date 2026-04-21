@@ -1,4 +1,4 @@
-package d31ruv.pulse.sutra.feature.journal.components
+﻿package d31ruv.pulse.sutra.feature.journal.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -19,10 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import d31ruv.pulse.sutra.feature.journal.SessionHistoryState
 
 @Composable
@@ -50,13 +47,13 @@ internal fun WeeklyProgressCard(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
-                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.journal.R.string.feature_journal_weekly_progress),
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.ui.R.string.core_ui_weekly_progress),
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.journal.R.string.feature_journal_total_chants_week),
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.ui.R.string.core_ui_total_chants_week),
                 style = MaterialTheme.typography.displaySmall,
                 color = MaterialTheme.colorScheme.primary,
             )
@@ -71,7 +68,7 @@ internal fun WeeklyProgressCard(
                     color = MaterialTheme.colorScheme.onSurface,
                 )
                 Text(
-                    text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.journal.R.string.feature_journal_repetitions),
+                    text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.ui.R.string.core_ui_repetitions),
                     modifier = Modifier.padding(bottom = 8.dp),
                     style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -112,3 +109,5 @@ private fun WeeklyBarChart(
         }
     }
 }
+
+

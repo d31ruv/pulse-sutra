@@ -68,6 +68,7 @@ data class SessionHistoryEntry(
 @Composable
 fun SessionHistoryScreen(
     modifier: Modifier = Modifier,
+    onSettingsClick: () -> Unit,
 ) {
     val state = remember { SessionHistoryState.initial() }
 

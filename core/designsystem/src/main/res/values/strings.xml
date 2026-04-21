@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="core_designsystem_soft">Soft</string>
-    <string name="core_designsystem_loud">Loud</string>
-    <string name="core_designsystem_history">History</string>
-    <string name="core_designsystem_preferences">Preferences</string>
-    <string name="core_designsystem_target">TARGET</string>
-</resources>

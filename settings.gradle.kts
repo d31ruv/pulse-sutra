@@ -44,7 +44,7 @@ include(":app")
 
 include(":core:common")
 include(":core:data")
-include(":core:designsystem")
+include(":core:ui")
 
 include(":feature:chant")
 include(":feature:target")

@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.SliderDefaults
@@ -20,9 +19,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import d31ruv.pulse.sutra.core.ui.R
 
 @Composable
 internal fun VoiceSensitivityCard(
@@ -49,13 +47,16 @@ internal fun VoiceSensitivityCard(
                 SensitivityGlyph()
             }
             Text(
-                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.settings.R.string.feature_settings_voice_sensitivity),
+                text = androidx.compose.ui.res.stringResource(R.string.core_ui_voice_sensitivity),
                 modifier = Modifier.weight(1f),
                 style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onSurface,
             )
             Text(
-                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.settings.R.string.feature_settings_percentage_format, (sliderValue * 100).toInt()),
+                text = androidx.compose.ui.res.stringResource(
+                    R.string.core_ui_percentage_format,
+                    (sliderValue * 100).toInt()
+                ),
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.primary,
             )
@@ -81,15 +82,17 @@ internal fun VoiceSensitivityCard(
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Text(
-                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.designsystem.R.string.core_designsystem_soft),
+                text = androidx.compose.ui.res.stringResource(R.string.core_ui_soft),
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
             Text(
-                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.designsystem.R.string.core_designsystem_loud),
+                text = androidx.compose.ui.res.stringResource(R.string.core_ui_loud),
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         }
     }
 }
+
+

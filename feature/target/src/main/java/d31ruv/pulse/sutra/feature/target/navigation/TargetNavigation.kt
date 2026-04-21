@@ -10,8 +10,8 @@ import kotlinx.serialization.Serializable
 object TargetRoute
 
 /** Registers the Target dashboard screen in the given [NavGraphBuilder]. */
-fun NavGraphBuilder.targetScreen() {
+fun NavGraphBuilder.targetScreen(onSettingsClick: () -> Unit) {
     composable<TargetRoute> {
-        TargetDashboardScreen()
+        TargetDashboardScreen(onSettingsClick = onSettingsClick)
     }
 }

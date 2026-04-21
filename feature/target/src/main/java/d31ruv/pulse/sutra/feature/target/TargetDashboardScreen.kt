@@ -18,15 +18,12 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import d31ruv.pulse.sutra.core.ui.R
 import d31ruv.pulse.sutra.feature.target.components.BeginSessionButton
 import d31ruv.pulse.sutra.feature.target.components.MantraSelectionCard
 import d31ruv.pulse.sutra.feature.target.components.RitualAnchorCard
 import d31ruv.pulse.sutra.feature.target.components.TargetSelectionCard
-
 
 data class TargetDashboardState(
     val mantras: List<String>,
@@ -65,6 +62,7 @@ data class TargetDashboardState(
 @Composable
 fun TargetDashboardScreen(
     modifier: Modifier = Modifier,
+    onSettingsClick: () -> Unit,
 ) {
     var selectedMantra by rememberSaveable { mutableStateOf(TargetDashboardState.initial().selectedMantra) }
     var selectedTarget by rememberSaveable { mutableStateOf(TargetDashboardState.initial().selectedTarget) }
@@ -107,12 +105,12 @@ internal fun TargetDashboardContent(
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
                 Text(
-                    text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.target.R.string.feature_target_set_intention),
+                    text = androidx.compose.ui.res.stringResource(R.string.core_ui_set_your_intention),
                     style = MaterialTheme.typography.displaySmall,
                     color = MaterialTheme.colorScheme.onSurface,
                 )
                 Text(
-                    text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.target.R.string.feature_target_configure_mantra),
+                    text = androidx.compose.ui.res.stringResource(R.string.core_ui_configure_mantra),
                     style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )

@@ -1,4 +1,4 @@
-package d31ruv.pulse.sutra.feature.journal.components
+﻿package d31ruv.pulse.sutra.feature.journal.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -19,10 +18,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import d31ruv.pulse.sutra.core.ui.R
 import d31ruv.pulse.sutra.feature.journal.SessionHistoryEntry
 
 @Composable
@@ -33,7 +31,7 @@ internal fun HistorySection(
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
         Text(
-            text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.designsystem.R.string.core_designsystem_history),
+            text = stringResource(R.string.core_ui_history),
             modifier = Modifier.padding(start = 32.dp),
             style = MaterialTheme.typography.titleLarge,
             color = MaterialTheme.colorScheme.onSurface,
@@ -101,7 +99,10 @@ private fun SessionHistoryCard(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 SessionHistoryMeta(
-                    text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.journal.R.string.feature_journal_chants_format, entry.chantCount),
+                    text = stringResource(
+                        R.string.core_ui_chants_format,
+                        entry.chantCount
+                    ),
                     icon = { ChantCountGlyph() },
                 )
                 SessionHistoryMeta(
@@ -130,3 +131,5 @@ private fun SessionHistoryMeta(
         )
     }
 }
+
+

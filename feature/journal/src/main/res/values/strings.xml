@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="feature_journal_weekly_progress">WEEKLY PROGRESS</string>
-    <string name="feature_journal_total_chants_week">Total Chants\nThis Week</string>
-    <string name="feature_journal_repetitions">repetitions</string>
-    <string name="feature_journal_chants_format">%1$d Chants</string>
-    <string name="feature_journal_continue_journey">Continue your journey</string>
-    <string name="feature_journal_find_inner_peace">Find Inner Peace Today</string>
-</resources>

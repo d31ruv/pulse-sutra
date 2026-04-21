@@ -1,7 +1,3 @@
 <resources>
     <string name="app_name">Pulse Sutra</string>
-    <string name="lbl_offline_mode">Offline mode</string>
-    <string name="lbl_chant">CHANT</string>
-    <string name="lbl_target">TARGET</string>
-    <string name="lbl_journal">JOURNAL</string>
 </resources>

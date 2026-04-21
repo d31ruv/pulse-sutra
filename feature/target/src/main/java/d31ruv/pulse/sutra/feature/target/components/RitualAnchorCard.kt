@@ -1,4 +1,4 @@
-package d31ruv.pulse.sutra.feature.target.components
+﻿package d31ruv.pulse.sutra.feature.target.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -19,9 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 
 @Composable
 internal fun RitualAnchorCard() {
@@ -48,7 +46,14 @@ internal fun RitualAnchorCard() {
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 6.dp)
                 .size(width = 126.dp, height = 104.dp)
-                .clip(RoundedCornerShape(topStart = 64.dp, topEnd = 64.dp, bottomStart = 24.dp, bottomEnd = 24.dp))
+                .clip(
+                    RoundedCornerShape(
+                        topStart = 64.dp,
+                        topEnd = 64.dp,
+                        bottomStart = 24.dp,
+                        bottomEnd = 24.dp
+                    )
+                )
                 .background(
                     brush = Brush.verticalGradient(
                         colors = listOf(Color(0xFFE38A4A), Color(0xFFB8642F)),
@@ -97,10 +102,12 @@ internal fun RitualAnchorCard() {
         ) {
             SparkGlyph()
             Text(
-                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.target.R.string.feature_target_ritual_of_focus),
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.ui.R.string.core_ui_ritual_of_focus),
                 style = MaterialTheme.typography.labelSmall,
                 color = Color(0xE6FFFFFF),
             )
         }
     }
 }
+
+
