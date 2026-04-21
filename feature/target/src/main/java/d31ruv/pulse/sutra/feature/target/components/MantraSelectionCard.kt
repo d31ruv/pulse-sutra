@@ -1,4 +1,4 @@
-package d31ruv.pulse.sutra.feature.target.components
+﻿package d31ruv.pulse.sutra.feature.target.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -8,16 +8,12 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import d31ruv.pulse.sutra.feature.target.TargetDashboardState
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -29,7 +25,7 @@ internal fun MantraSelectionCard(
     Column(
         verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
-        SectionLabel(text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.target.R.string.feature_target_choose_mantra))
+        SectionLabel(text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.ui.R.string.core_ui_choose_mantra))
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -80,3 +76,5 @@ internal fun AssistChip(
         style = MaterialTheme.typography.labelMedium,
     )
 }
+
+

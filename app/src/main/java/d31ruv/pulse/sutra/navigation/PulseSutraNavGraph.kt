@@ -6,13 +6,13 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.scaleIn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import d31ruv.pulse.sutra.feature.chant.navigation.ChantRoute
 import d31ruv.pulse.sutra.feature.chant.navigation.chantScreen
 import d31ruv.pulse.sutra.feature.journal.navigation.journalScreen
 import d31ruv.pulse.sutra.feature.settings.navigation.settingsScreen
 import d31ruv.pulse.sutra.feature.target.navigation.targetScreen
+import d31ruv.pulse.sutra.ui.PulseSutraAppState
 
 /**
  * Root [NavHost] that wires all top-level tab destinations using type-safe
@@ -23,11 +23,11 @@ import d31ruv.pulse.sutra.feature.target.navigation.targetScreen
  */
 @Composable
 fun PulseSutraNavGraph(
-    navController: NavHostController,
+    appState: PulseSutraAppState,
     modifier: Modifier = Modifier,
 ) {
     NavHost(
-        navController = navController,
+        navController = appState.navController,
         startDestination = ChantRoute,
         modifier = modifier,
         enterTransition = {
@@ -37,9 +37,9 @@ fun PulseSutraNavGraph(
         },
         exitTransition = { fadeOut() },
     ) {
-        chantScreen()
-        targetScreen()
-        journalScreen()
+        chantScreen(onSettingsClick = appState::navigateToSettings)
+        targetScreen(onSettingsClick = appState::navigateToSettings)
+        journalScreen(onSettingsClick = appState::navigateToSettings)
         settingsScreen()
     }
 }

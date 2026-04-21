@@ -1,4 +1,4 @@
-package d31ruv.pulse.sutra.feature.journal.components
+﻿package d31ruv.pulse.sutra.feature.journal.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,9 +16,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 
 internal const val zenImageUrl =
@@ -59,15 +56,17 @@ internal fun ContinueJourneyCard() {
                 .padding(24.dp),
         ) {
             Text(
-                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.journal.R.string.feature_journal_continue_journey),
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.ui.R.string.core_ui_continue_journey),
                 style = MaterialTheme.typography.bodyMedium,
                 color = Color(0xCCFFFFFF),
             )
             Text(
-                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.feature.journal.R.string.feature_journal_find_inner_peace),
+                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.ui.R.string.core_ui_find_inner_peace),
                 style = MaterialTheme.typography.titleLarge,
                 color = Color.White,
             )
         }
     }
 }
+
+

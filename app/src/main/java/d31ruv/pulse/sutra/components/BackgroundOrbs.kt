@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import d31ruv.pulse.sutra.core.designsystem.theme.PulseSutraTheme
+import d31ruv.pulse.sutra.core.ui.theme.PulseSutraTheme
 
 @Composable
 fun BackgroundOrbs(modifier: Modifier = Modifier) {

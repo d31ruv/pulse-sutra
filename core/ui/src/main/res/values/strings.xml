@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="core_ui_offline_mode">Offline mode</string>
+    <!-- Chant -->
+    <string name="core_ui_chant">Chant</string>
+    <string name="core_ui_current_mantra">CURRENT MANTRA</string>
+    <string name="core_ui_start_session">Start Session</string>
+    <string name="core_ui_manual_count">Manual Count</string>
+    <!-- Target -->
+    <string name="core_ui_target">Target</string>
+    <string name="core_ui_set_intention">Set Intention</string>
+    <string name="core_ui_set_your_intention">Set Your Intention</string>
+    <string name="core_ui_choose_mantra">CHOOSE MANTRA</string>
+    <string name="core_ui_repetition_target">REPETITION TARGET</string>
+    <string name="core_ui_configure_mantra">Configure your mantra session for a focused path.</string>
+    <string name="core_ui_ritual_of_focus">RITUAL OF FOCUS</string>
+    <string name="core_ui_begin_session">Begin Session</string>
+    <!-- Journal -->
+    <string name="core_ui_journal">Journal</string>
+    <string name="core_ui_history">History</string>
+    <string name="core_ui_weekly_progress">WEEKLY PROGRESS</string>
+    <string name="core_ui_total_chants_week">Total Chants\nThis Week</string>
+    <string name="core_ui_repetitions">repetitions</string>
+    <string name="core_ui_chants_format">%1$d Chants</string>
+    <string name="core_ui_continue_journey">Continue your journey</string>
+    <string name="core_ui_find_inner_peace">Find Inner Peace Today</string>
+    <!-- Setting -->
+    <string name="core_ui_preferences">Preferences</string>
+    <string name="core_ui_sensory_feedback">SENSORY FEEDBACK</string>
+    <string name="core_ui_intelligent_counting">INTELLIGENT COUNTING</string>
+    <string name="core_ui_environment">ENVIRONMENT</string>
+    <string name="core_ui_data_privacy">DATA &amp; PRIVACY</string>
+    <string name="core_ui_tailor_environment">Tailor your meditation environment to your rhythm.</string>
+    <string name="core_ui_voice_sensitivity">Voice Sensitivity</string>
+    <string name="core_ui_session_archive">Session Archive</string>
+    <string name="core_ui_delete_history_warning">This will permanently delete all mantra history.</string>
+    <string name="core_ui_clear_history">CLEAR\nHISTORY</string>
+    <string name="core_ui_percentage_format">%1$d%%</string>
+
+    <string name="core_ui_soft">Soft</string>
+    <string name="core_ui_loud">Loud</string>
+</resources>

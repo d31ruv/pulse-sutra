@@ -6,12 +6,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.runtime.getValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import d31ruv.pulse.sutra.core.data.utils.network.NetworkMonitor
-import d31ruv.pulse.sutra.core.designsystem.theme.PulseSutraTheme
+import d31ruv.pulse.sutra.core.ui.theme.DarkTheme
+import d31ruv.pulse.sutra.core.ui.theme.PulseSutraTheme
 import d31ruv.pulse.sutra.ui.PulseSutraApp
 import d31ruv.pulse.sutra.ui.rememberPulseSutraAppState
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -24,17 +31,22 @@ class MainActivity : ComponentActivity() {
         installSplashScreen()
         super.onCreate(savedInstanceState)
 
-        val darkTheme = false
-
-        enableEdgeToEdge(
-            statusBarStyle = if (darkTheme) {
-                SystemBarStyle.dark(TRANSPARENT)
-            } else {
-                SystemBarStyle.light(TRANSPARENT, TRANSPARENT)
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                DarkTheme.enabled.collect { darkTheme ->
+                    enableEdgeToEdge(
+                        statusBarStyle = if (darkTheme) {
+                            SystemBarStyle.dark(TRANSPARENT)
+                        } else {
+                            SystemBarStyle.light(TRANSPARENT, TRANSPARENT)
+                        }
+                    )
+                }
             }
-        )
+        }
 
         setContent {
+            val darkTheme by DarkTheme.enabled.collectAsStateWithLifecycle()
             val appState = rememberPulseSutraAppState(
                 networkMonitor = networkMonitor,
             )

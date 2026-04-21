@@ -13,8 +13,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import d31ruv.pulse.sutra.R
-import d31ruv.pulse.sutra.core.designsystem.theme.PulseSutraTheme
+import d31ruv.pulse.sutra.core.ui.R
+import d31ruv.pulse.sutra.core.ui.theme.PulseSutraTheme
 
 @Composable
 fun OfflineBadge(modifier: Modifier = Modifier) {
@@ -22,7 +22,7 @@ fun OfflineBadge(modifier: Modifier = Modifier) {
     val typography = MaterialTheme.typography
 
     Text(
-        text = stringResource(R.string.lbl_offline_mode),
+        text = stringResource(R.string.core_ui_offline_mode),
         modifier = modifier
             .clip(CircleShape)
             .background(colorScheme.primaryContainer)
