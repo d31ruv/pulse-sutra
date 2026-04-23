@@ -97,9 +97,9 @@ fun NavigationSuiteScope.pulseSutraNavigationItem(
                         } else Modifier
                     )
                     .graphicsLayer {
-                        this.rotationX = rotationX   // Flip Y-axis (Target)
-                        this.rotationY = rotationY   // Flip X-axis (Chant)
-                        this.rotationZ = tilt        // Tilt (Journal)
+                        this.rotationX = rotationX  // Flip Y-axis
+                        this.rotationY = rotationY  // Flip X-axis
+                        this.rotationZ = tilt   // Tilt
                         cameraDistance = 8 * density
                     }
                     .padding(horizontal = 12.dp, vertical = 4.dp))

@@ -1,104 +1,49 @@
 package d31ruv.pulse.sutra.feature.chant.components
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import d31ruv.pulse.sutra.core.ui.theme.PulseSutraTheme
+import d31ruv.pulse.sutra.feature.chant.components.buttons.ManualCountButton
+import d31ruv.pulse.sutra.feature.chant.components.buttons.ResetIconButton
+import d31ruv.pulse.sutra.feature.chant.components.buttons.StopIconButton
 
 @Composable
 internal fun SecondaryActionRow(
-    manualActionLabel: String,
     modifier: Modifier = Modifier,
 ) {
     Row(
-        modifier = modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(16.dp),
+        modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(12.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        SecondaryActionButton(
-            label = manualActionLabel,
-            containerColor = MaterialTheme.colorScheme.surfaceVariant,
-            modifier = Modifier.weight(1f),
-        ) {
-            PlusGlyph()
-        }
-
-        Row(
-            modifier = Modifier.weight(1f),
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
-        ) {
-            MiniActionButton(
-                containerColor = MaterialTheme.colorScheme.surfaceContainerLowest,
-                modifier = Modifier.weight(1f),
-            ) {
-                TimerGlyph()
-            }
-
-            MiniActionButton(
-                containerColor = MaterialTheme.colorScheme.errorContainer,
-                modifier = Modifier.weight(1f),
-            ) {
-                StopGlyph()
-            }
-        }
-    }
-}
-
-@Composable
-private fun SecondaryActionButton(
-    label: String,
-    containerColor: Color,
-    modifier: Modifier = Modifier,
-    icon: @Composable () -> Unit,
-) {
-    Row(
-        modifier = modifier
-            .height(56.dp)
-            .clip(MaterialTheme.shapes.medium)
-            .background(containerColor)
-            .padding(horizontal = 16.dp),
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        icon()
-        Spacer(modifier = Modifier.width(8.dp))
-        Text(
-            text = label,
-            color = MaterialTheme.colorScheme.onSurface,
-            style = MaterialTheme.typography.titleSmall,
+        ManualCountButton(
+            modifier = Modifier
+                .fillMaxHeight()
+                .weight(.5f),
+        )
+        ResetIconButton(
+            modifier = Modifier
+                .fillMaxHeight()
+                .weight(.25f),
+        )
+        StopIconButton(
+            modifier = Modifier
+                .fillMaxHeight()
+                .weight(.25f),
         )
     }
 }
 
+@Preview
 @Composable
-private fun MiniActionButton(
-    containerColor: Color,
-    modifier: Modifier = Modifier,
-    icon: @Composable () -> Unit,
-) {
-    Box(
-        modifier = modifier
-            .height(56.dp)
-            .clip(MaterialTheme.shapes.medium)
-            .background(containerColor),
-        contentAlignment = Alignment.Center,
-    ) {
-        icon()
+private fun SecondaryActionRowPreview() {
+    PulseSutraTheme {
+        SecondaryActionRow()
     }
 }

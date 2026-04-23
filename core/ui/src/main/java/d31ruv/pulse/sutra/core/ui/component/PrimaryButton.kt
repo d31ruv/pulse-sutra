@@ -48,14 +48,16 @@ fun PrimaryButton(
     val contentColor by colors.contentColor(enabled)
 
     Row(
-        modifier = Modifier
+        modifier = modifier
             .semantics { role = Role.Button }
             .sizeIn(
-                minHeight = ButtonDefaults.MinHeight, minWidth = ButtonDefaults.MinWidth
+                minHeight = ButtonDefaults.MinHeight,
+                minWidth = ButtonDefaults.MinWidth,
             )
             .shadow(
                 elevation = if (enabled) 4.dp else 0.dp,
                 shape = shape,
+                clip = true,
             )
             .background(
                 brush = containerBrush,
@@ -64,9 +66,9 @@ fun PrimaryButton(
             .clickable(
                 enabled = enabled,
                 onClick = onClick,
-                role = Role.Button
+                role = Role.Button,
             )
-            .padding(contentPadding) then modifier,
+            .padding(contentPadding),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center,
     ) {
