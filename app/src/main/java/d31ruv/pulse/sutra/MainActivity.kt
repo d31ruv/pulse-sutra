@@ -34,12 +34,14 @@ class MainActivity : ComponentActivity() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 DarkTheme.enabled.collect { darkTheme ->
+                    val systemBarStyle = if (darkTheme) {
+                        SystemBarStyle.dark(TRANSPARENT)
+                    } else {
+                        SystemBarStyle.light(TRANSPARENT, TRANSPARENT)
+                    }
                     enableEdgeToEdge(
-                        statusBarStyle = if (darkTheme) {
-                            SystemBarStyle.dark(TRANSPARENT)
-                        } else {
-                            SystemBarStyle.light(TRANSPARENT, TRANSPARENT)
-                        }
+                        statusBarStyle = systemBarStyle,
+                        navigationBarStyle = systemBarStyle,
                     )
                 }
             }

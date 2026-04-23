@@ -15,10 +15,10 @@ class ChantViewModel @Inject constructor(
     chantDashboardRepository: ChantDashboardRepository,
 ) : ViewModel() {
 
-    val dashboardState: StateFlow<ChantDashboardState?> = chantDashboardRepository.dashboardState
-        .stateIn(
+    val dashboardState: StateFlow<ChantDashboardState> =
+        chantDashboardRepository.dashboardState.stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5_000),
-            initialValue = null,
+            initialValue = ChantDashboardState(),
         )
 }

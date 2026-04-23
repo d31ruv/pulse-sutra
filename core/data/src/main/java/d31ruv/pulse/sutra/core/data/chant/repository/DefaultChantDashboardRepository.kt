@@ -15,8 +15,6 @@ internal class DefaultChantDashboardRepository @Inject constructor() : ChantDash
             mantraName = "Om Namah Shivaya",
             currentCount = 54,
             targetCount = 108,
-            primaryActionLabel = "Start Session",
-            manualActionLabel = "Manual Count",
         ),
     )
 }

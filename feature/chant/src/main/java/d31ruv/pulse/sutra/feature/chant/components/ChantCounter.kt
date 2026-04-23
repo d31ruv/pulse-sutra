@@ -6,9 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -16,7 +14,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import d31ruv.pulse.sutra.core.ui.R
 
 @Composable
@@ -36,16 +37,14 @@ internal fun ChantCounter(
     )
 
     Box(
-        modifier = modifier.size(320.dp),
+        modifier = modifier.sizeIn(minWidth = 320.dp, minHeight = 320.dp),
         contentAlignment = Alignment.Center,
     ) {
         CircularProgressIndicator(
-            modifier = Modifier
-                .padding(16.dp)
-                .fillMaxSize(),
+            modifier = Modifier.matchParentSize(),
             progress = { animatedProgress },
+            strokeWidth = 8.dp,
         )
-
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
@@ -53,22 +52,24 @@ internal fun ChantCounter(
             Text(
                 text = animatedCurrentCount.toString(),
                 color = colorScheme.onSurface,
-                style = typography.displayLarge,
+                style = typography.displayLarge.copy(
+                    fontSize = 128.sp,
+                    fontWeight = FontWeight.ExtraLight,
+                ),
             )
-
             Row(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    text = androidx.compose.ui.res.stringResource(R.string.core_ui_target),
+                    text = stringResource(R.string.core_ui_target),
                     color = colorScheme.onSurfaceVariant,
-                    style = typography.labelMedium,
+                    style = typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
                 )
                 Text(
                     text = animatedTargetCount.toString(),
                     color = colorScheme.primary,
-                    style = typography.labelMedium,
+                    style = typography.labelMedium.copy(fontWeight = FontWeight.Bold),
                 )
             }
         }

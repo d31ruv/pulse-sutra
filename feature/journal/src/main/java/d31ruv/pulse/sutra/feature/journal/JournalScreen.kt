@@ -66,7 +66,7 @@ data class SessionHistoryEntry(
 )
 
 @Composable
-fun SessionHistoryScreen(
+fun JournalScreen(
     modifier: Modifier = Modifier,
     onSettingsClick: () -> Unit,
 ) {

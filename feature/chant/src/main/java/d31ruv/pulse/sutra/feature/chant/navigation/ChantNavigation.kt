@@ -2,7 +2,7 @@ package d31ruv.pulse.sutra.feature.chant.navigation
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import d31ruv.pulse.sutra.feature.chant.ChantDashboardScreen
+import d31ruv.pulse.sutra.feature.chant.ChantScreen
 import kotlinx.serialization.Serializable
 
 /**
@@ -18,6 +18,6 @@ object ChantRoute
  */
 fun NavGraphBuilder.chantScreen(onSettingsClick: () -> Unit) {
     composable<ChantRoute> {
-        ChantDashboardScreen(onSettingsClick = onSettingsClick)
+        ChantScreen(onSettingsClick = onSettingsClick)
     }
 }
