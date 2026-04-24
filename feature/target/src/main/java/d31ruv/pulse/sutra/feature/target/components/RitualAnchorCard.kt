@@ -1,113 +1,133 @@
 ﻿package d31ruv.pulse.sutra.feature.target.components
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.layout
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import d31ruv.pulse.sutra.core.ui.R
 
 @Composable
-internal fun RitualAnchorCard() {
+internal fun RitualAnchorCard(modifier: Modifier) {
+    val shapes = MaterialTheme.shapes
+    val typography = MaterialTheme.typography
+
     Box(
-        modifier = Modifier
+        modifier = modifier
+            .heightIn(min = 140.dp)
             .fillMaxWidth()
-            .height(140.dp)
-            .clip(MaterialTheme.shapes.medium)
+            .clip(shapes.medium)
             .background(
                 brush = Brush.verticalGradient(
                     colors = listOf(Color(0xFFF6EFE6), Color(0xFFE1E5E8), Color(0xFFB1B1AC)),
                 ),
             ),
     ) {
-        Box(
-            modifier = Modifier
-                .align(Alignment.Center)
-                .size(156.dp)
-                .clip(CircleShape)
-                .background(Color(0x12F49D37)),
+        Image(
+            modifier = Modifier.fillMaxSize(),
+            painter = painterResource(R.drawable.ic_meditation_background),
+            contentDescription = "Meditation Background",
+            contentScale = ContentScale.Crop,
         )
+        Row(
+            modifier = Modifier
+                .align(Alignment.BottomStart)
+                .padding(16.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Icon(
+                painter = painterResource(R.drawable.ic_ritual_focus),
+                contentDescription = "Ritual Focus",
+            )
+            Text(
+                text = stringResource(R.string.core_ui_ritual_of_focus),
+                style = typography.labelSmall,
+            )
+        }
+    }
+}
+
+private fun Modifier.parallaxLayoutModifier(
+    scrollState: ScrollState,
+    rate: Int,
+) = layout { measurable, constraints ->
+    val placeable = measurable.measure(constraints)
+    val yOffset = if (rate > 0) scrollState.value / rate else scrollState.value
+
+    layout(placeable.width, placeable.height) {
+        placeable.place(0, yOffset)
+    }
+}
+
+@Composable
+internal fun RitualAnchorCard(
+    modifier: Modifier = Modifier,
+    scrollState: ScrollState,
+) {
+    val shapes = MaterialTheme.shapes
+    val typography = MaterialTheme.typography
+
+    Box(
+        modifier = modifier
+            .heightIn(min = 140.dp)
+            .fillMaxWidth()
+            .clip(shapes.medium)
+    ) {
+        Image(
+            modifier = Modifier
+                .matchParentSize()
+                .parallaxLayoutModifier(scrollState = scrollState, rate = 10)
+                .scale(1.25f),
+            painter = painterResource(R.drawable.ic_meditation_background),
+            contentDescription = "Meditation Background",
+            contentScale = ContentScale.Crop,
+        )
+
         Box(
             modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .padding(bottom = 6.dp)
-                .size(width = 126.dp, height = 104.dp)
-                .clip(
-                    RoundedCornerShape(
-                        topStart = 64.dp,
-                        topEnd = 64.dp,
-                        bottomStart = 24.dp,
-                        bottomEnd = 24.dp
-                    )
-                )
+                .matchParentSize()
                 .background(
-                    brush = Brush.verticalGradient(
-                        colors = listOf(Color(0xFFE38A4A), Color(0xFFB8642F)),
-                    ),
-                ),
-        )
-        Box(
-            modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .padding(bottom = 86.dp)
-                .size(44.dp)
-                .clip(CircleShape)
-                .background(Color(0xFFFFD7C4)),
-        )
-        Box(
-            modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .padding(bottom = 82.dp, start = 52.dp)
-                .size(width = 10.dp, height = 32.dp)
-                .clip(RoundedCornerShape(20.dp))
-                .background(Color(0xFF7D6158)),
-        )
-        Box(
-            modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .padding(bottom = 82.dp, end = 52.dp)
-                .size(width = 10.dp, height = 32.dp)
-                .clip(RoundedCornerShape(20.dp))
-                .background(Color(0xFF7D6158)),
-        )
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(
-                    brush = Brush.verticalGradient(
-                        colors = listOf(Color.Transparent, Color(0x66000000)),
+                    Brush.verticalGradient(
+                        colors = listOf(Color(0x80F6EFE6), Color(0x40E1E5E8), Color(0xA0B1B1AC)),
                     ),
                 ),
         )
         Row(
             modifier = Modifier
                 .align(Alignment.BottomStart)
-                .padding(start = 18.dp, bottom = 14.dp),
+                .padding(16.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            SparkGlyph()
+            Icon(
+                painter = painterResource(R.drawable.ic_ritual_focus),
+                contentDescription = "Ritual Focus",
+            )
             Text(
-                text = androidx.compose.ui.res.stringResource(d31ruv.pulse.sutra.core.ui.R.string.core_ui_ritual_of_focus),
-                style = MaterialTheme.typography.labelSmall,
-                color = Color(0xE6FFFFFF),
+                text = stringResource(R.string.core_ui_ritual_of_focus),
+                style = typography.labelSmall,
             )
         }
     }
 }
-
-

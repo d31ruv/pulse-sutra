@@ -15,7 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import d31ruv.pulse.sutra.core.ui.R
-import d31ruv.pulse.sutra.core.ui.component.SettingIconButton
+import d31ruv.pulse.sutra.core.ui.component.buttons.SettingIconButton
 import d31ruv.pulse.sutra.core.ui.theme.PulseSutraTheme
 
 private const val TAG = "ChantTopBar"
@@ -31,7 +31,9 @@ fun ChantTopBar(
 
     TopAppBar(
         modifier = modifier,
-        colors = TopAppBarDefaults.topAppBarColors(containerColor = colorScheme.surface.copy(.9f)),
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = colorScheme.surface.copy(.9f),
+        ),
         title = {
             Text(
                 text = stringResource(R.string.core_ui_chant),

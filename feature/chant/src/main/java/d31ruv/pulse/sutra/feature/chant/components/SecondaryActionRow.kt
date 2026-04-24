@@ -25,17 +25,17 @@ internal fun SecondaryActionRow(
         ManualCountButton(
             modifier = Modifier
                 .fillMaxHeight()
-                .weight(.5f),
+                .weight(.6f),
         )
         ResetIconButton(
             modifier = Modifier
                 .fillMaxHeight()
-                .weight(.25f),
+                .weight(.2f),
         )
         StopIconButton(
             modifier = Modifier
                 .fillMaxHeight()
-                .weight(.25f),
+                .weight(.2f),
         )
     }
 }

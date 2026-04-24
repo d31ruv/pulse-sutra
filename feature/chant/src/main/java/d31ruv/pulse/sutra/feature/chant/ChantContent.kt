@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
@@ -57,35 +58,35 @@ internal fun ChantContent(
             ) {
                 Spacer(modifier = Modifier.height(32.dp))
                 Text(
-                    modifier = Modifier.padding(horizontal = 8.dp),
+                    modifier = Modifier.padding(horizontal = 16.dp),
                     text = stringResource(R.string.core_ui_current_mantra),
                     color = colorScheme.primary,
                     style = typography.labelSmall.copy(fontWeight = FontWeight.Bold),
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    modifier = Modifier.padding(horizontal = 8.dp),
+                    modifier = Modifier.padding(horizontal = 16.dp),
                     text = state.mantraName,
                     color = colorScheme.onSurface,
                     style = typography.headlineLarge.copy(fontWeight = FontWeight.ExtraBold),
                 )
                 Spacer(modifier = Modifier.height(32.dp))
                 ChantCounter(
-                    modifier = Modifier.padding(horizontal = 8.dp),
+                    modifier = Modifier.padding(horizontal = 16.dp),
                     currentCount = state.currentCount,
                     targetCount = state.targetCount,
                 )
                 Spacer(modifier = Modifier.height(48.dp))
                 StartSessionButton(
                     modifier = Modifier
-                        .padding(horizontal = 8.dp)
-                        .height(68.dp)
+                        .padding(horizontal = 16.dp)
+                        .heightIn(68.dp)
                         .fillMaxWidth(),
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 SecondaryActionRow(
                     modifier = Modifier
-                        .padding(horizontal = 8.dp)
+                        .padding(horizontal = 16.dp)
                         .height(60.dp)
                         .fillMaxWidth(),
                 )

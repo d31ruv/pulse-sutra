@@ -15,7 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import d31ruv.pulse.sutra.core.ui.R
-import d31ruv.pulse.sutra.core.ui.component.PrimaryButton
+import d31ruv.pulse.sutra.core.ui.component.buttons.PrimaryButton
 import d31ruv.pulse.sutra.core.ui.theme.PulseSutraTheme
 
 @Composable

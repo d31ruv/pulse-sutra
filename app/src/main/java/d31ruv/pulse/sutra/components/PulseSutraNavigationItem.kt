@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import d31ruv.pulse.sutra.core.ui.R
@@ -102,10 +103,16 @@ fun NavigationSuiteScope.pulseSutraNavigationItem(
                         this.rotationZ = tilt   // Tilt
                         cameraDistance = 8 * density
                     }
-                    .padding(horizontal = 12.dp, vertical = 4.dp))
+                    .padding(horizontal = 12.dp, vertical = 4.dp),
+            )
         },
-        label = { Text(text = stringResource(tab.label)) },
-        alwaysShowLabel = selected,
+        label = {
+            val typography = MaterialTheme.typography
+            Text(
+                text = stringResource(tab.label),
+                style = typography.labelMedium.copy(fontWeight = FontWeight.Bold),
+            )
+        },
         colors = navigationItemColor,
     )
 }
