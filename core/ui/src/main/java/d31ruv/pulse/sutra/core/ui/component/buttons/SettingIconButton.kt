@@ -1,4 +1,4 @@
-package d31ruv.pulse.sutra.core.ui.component
+package d31ruv.pulse.sutra.core.ui.component.buttons
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.interaction.MutableInteractionSource
