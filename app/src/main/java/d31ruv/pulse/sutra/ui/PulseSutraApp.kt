@@ -4,6 +4,7 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBarItemDefaults
@@ -62,12 +63,6 @@ fun PulseSutraApp(appState: PulseSutraAppState) {
     ) {
         BackgroundOrbs(Modifier.fillMaxSize())
         Column(modifier = Modifier.fillMaxSize()) {
-            AnimatedVisibility(
-                visible = isOffline,
-                modifier = Modifier.align(Alignment.CenterHorizontally),
-            ) {
-                OfflineBadge(modifier = Modifier.padding(4.dp))
-            }
             PulseSutraNavGraph(
                 modifier = Modifier
                     .padding(horizontal = 16.dp) // todo temporary padding at root
@@ -75,6 +70,16 @@ fun PulseSutraApp(appState: PulseSutraAppState) {
                     .weight(1f),
                 appState = appState,
             )
+            AnimatedVisibility(
+                visible = isOffline,
+                modifier = Modifier.align(Alignment.CenterHorizontally),
+            ) {
+                OfflineBadge(
+                    modifier = Modifier
+                        .padding(4.dp)
+                        .navigationBarsPadding(),
+                )
+            }
         }
     }
 

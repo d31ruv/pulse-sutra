@@ -7,10 +7,10 @@ import androidx.compose.animation.scaleIn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
+import d31ruv.pulse.sutra.feature.chant.navigation.ChantRoute
 import d31ruv.pulse.sutra.feature.chant.navigation.chantScreen
 import d31ruv.pulse.sutra.feature.journal.navigation.journalScreen
 import d31ruv.pulse.sutra.feature.settings.navigation.settingsScreen
-import d31ruv.pulse.sutra.feature.target.navigation.TargetRoute
 import d31ruv.pulse.sutra.feature.target.navigation.targetScreen
 import d31ruv.pulse.sutra.ui.PulseSutraAppState
 
@@ -28,7 +28,7 @@ fun PulseSutraNavGraph(
 ) {
     NavHost(
         navController = appState.navController,
-        startDestination = TargetRoute,
+        startDestination = ChantRoute,
         modifier = modifier,
         enterTransition = {
             fadeIn(animationSpec = tween(delayMillis = 90)) + scaleIn(

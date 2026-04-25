@@ -19,6 +19,8 @@
     <!-- Journal -->
     <string name="core_ui_journal">Journal</string>
     <string name="core_ui_history">History</string>
+    <string name="core_ui_progress">Progress</string>
+    <string name="core_ui_track_your_chants">Track your daily chanting progress.</string>
     <string name="core_ui_weekly_progress">WEEKLY PROGRESS</string>
     <string name="core_ui_total_chants_week">Total Chants\nThis Week</string>
     <string name="core_ui_repetitions">repetitions</string>

@@ -1,4 +1,4 @@
-package d31ruv.pulse.sutra.feature.target
+package d31ruv.pulse.sutra.feature.journal
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
@@ -24,18 +23,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import d31ruv.pulse.sutra.core.ui.theme.PulseSutraTheme
 import d31ruv.pulse.sutra.core.ui.util.getMaxContentWidth
-import d31ruv.pulse.sutra.feature.target.components.BeginSessionButton
-import d31ruv.pulse.sutra.feature.target.components.MantraSelectionCard
-import d31ruv.pulse.sutra.feature.target.components.RitualAnchorCard
-import d31ruv.pulse.sutra.feature.target.components.TargetSelectionCard
-import d31ruv.pulse.sutra.feature.target.components.TargetTopBar
+import d31ruv.pulse.sutra.feature.journal.components.ContinueJourneyCard
+import d31ruv.pulse.sutra.feature.journal.components.JournalTopBar
+import d31ruv.pulse.sutra.feature.journal.components.history.HistorySection
+import d31ruv.pulse.sutra.feature.journal.components.weeklychart.WeeklyProgressCard
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-internal fun TargetContent(
-    state: TargetState = TargetState(),
-    onMantraSelected: (String) -> Unit = {},
-    onTargetSelected: (Int) -> Unit = {},
+@OptIn(ExperimentalMaterial3Api::class)
+fun JournalContent(
+    state: SessionHistoryState = SessionHistoryState.initial(),
     onSettingsClick: () -> Unit = {},
 ) {
     val windowInfo = LocalWindowInfo.current
@@ -46,10 +42,7 @@ internal fun TargetContent(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         containerColor = Color.Transparent,
         topBar = {
-            TargetTopBar(
-                scrollBehavior = scrollBehavior,
-                onSettingsClick = onSettingsClick,
-            )
+            JournalTopBar(scrollBehavior = scrollBehavior, onSettingsClick = onSettingsClick)
         },
     ) { innerPadding ->
         Box(
@@ -63,36 +56,27 @@ internal fun TargetContent(
                 modifier = Modifier.widthIn(max = windowInfo.getMaxContentWidth()),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                Spacer(Modifier.height(16.dp))
-                MantraSelectionCard(
-                    modifier = Modifier
-                        .padding(horizontal = 16.dp)
-                        .fillMaxWidth(),
-                    selectedMantra = state.selectedMantra,
-                    mantras = state.mantras,
-                    onMantraSelected = onMantraSelected,
-                )
-                Spacer(modifier = Modifier.height(40.dp))
-                TargetSelectionCard(
+                Spacer(Modifier.height(32.dp))
+                WeeklyProgressCard(
                     modifier = Modifier
                         .padding(horizontal = 16.dp)
                         .fillMaxWidth(),
                     state = state,
-                    onTargetSelected = onTargetSelected,
+                    scrollState = scrollState,
                 )
-                Spacer(modifier = Modifier.height(40.dp))
-                RitualAnchorCard(
+                Spacer(Modifier.height(48.dp))
+                HistorySection(
+                    modifier = Modifier
+                        .padding(horizontal = 16.dp)
+                        .fillMaxWidth(),
+                    entries = state.entries,
+                )
+                Spacer(Modifier.height(48.dp))
+                ContinueJourneyCard(
                     modifier = Modifier
                         .padding(horizontal = 16.dp)
                         .fillMaxWidth(),
                     scrollState = scrollState,
-                )
-                Spacer(modifier = Modifier.height(16.dp))
-                BeginSessionButton(
-                    modifier = Modifier
-                        .padding(horizontal = 16.dp)
-                        .heightIn(68.dp)
-                        .fillMaxWidth(),
                 )
                 Spacer(Modifier.height(16.dp))
             }
@@ -102,8 +86,8 @@ internal fun TargetContent(
 
 @Preview
 @Composable
-private fun TargetContentPreview() {
+private fun JournalContentPreview() {
     PulseSutraTheme {
-        TargetContent()
+        JournalContent()
     }
 }

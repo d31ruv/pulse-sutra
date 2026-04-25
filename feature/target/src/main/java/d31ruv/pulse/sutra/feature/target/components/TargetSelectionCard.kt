@@ -33,12 +33,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import d31ruv.pulse.sutra.core.ui.R
 import d31ruv.pulse.sutra.core.ui.theme.PulseSutraTheme
-import d31ruv.pulse.sutra.feature.target.TargetDashboardState
+import d31ruv.pulse.sutra.feature.target.TargetState
 import kotlin.math.roundToInt
 
 @Composable
 internal fun TargetSelectionCard(
-    state: TargetDashboardState,
+    state: TargetState,
     onTargetSelected: (Int) -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -58,7 +58,7 @@ internal fun TargetSelectionCard(
             verticalAlignment = Alignment.Bottom,
         ) {
             Text(
-                text = stringResource(R.string.core_ui_choose_mantra),
+                text = stringResource(R.string.core_ui_repetition_target),
                 style = typography.labelSmall.copy(fontWeight = FontWeight.Bold),
                 color = colorScheme.primary,
             )
@@ -130,7 +130,7 @@ internal fun TargetSelectionCard(
 private fun TargetSelectionCardPreview() {
     PulseSutraTheme {
         TargetSelectionCard(
-            state = TargetDashboardState(),
+            state = TargetState(),
             onTargetSelected = {},
         )
     }
