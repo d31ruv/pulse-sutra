@@ -33,7 +33,7 @@ import d31ruv.pulse.sutra.feature.target.components.TargetTopBar
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun TargetContent(
-    state: TargetDashboardState = TargetDashboardState(),
+    state: TargetState = TargetState(),
     onMantraSelected: (String) -> Unit = {},
     onTargetSelected: (Int) -> Unit = {},
     onSettingsClick: () -> Unit = {},
@@ -87,7 +87,7 @@ internal fun TargetContent(
                         .fillMaxWidth(),
                     scrollState = scrollState,
                 )
-                Spacer(modifier = Modifier.height(40.dp))
+                Spacer(modifier = Modifier.height(16.dp))
                 BeginSessionButton(
                     modifier = Modifier
                         .padding(horizontal = 16.dp)
