@@ -45,7 +45,7 @@ internal fun MantraSelectionCard(
     Column(modifier = modifier) {
         Text(
             text = stringResource(R.string.core_ui_choose_mantra),
-            style = typography.labelSmall,
+            style = typography.labelSmall.copy(fontWeight = FontWeight.Bold),
             color = colorScheme.primary,
         )
         Spacer(Modifier.height(16.dp))

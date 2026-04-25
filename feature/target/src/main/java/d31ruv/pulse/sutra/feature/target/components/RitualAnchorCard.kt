@@ -20,25 +20,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.layout
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import d31ruv.pulse.sutra.core.ui.R
 import d31ruv.pulse.sutra.core.ui.theme.PulseSutraTheme
-
-private fun Modifier.parallaxLayoutModifier(
-    scrollState: ScrollState,
-    rate: Int,
-) = layout { measurable, constraints ->
-    val placeable = measurable.measure(constraints)
-    val yOffset = if (rate > 0) scrollState.value / rate else scrollState.value
-
-    layout(placeable.width, placeable.height) {
-        placeable.place(0, yOffset)
-    }
-}
+import d31ruv.pulse.sutra.core.ui.util.parallaxLayoutModifier
 
 @Composable
 internal fun RitualAnchorCard(

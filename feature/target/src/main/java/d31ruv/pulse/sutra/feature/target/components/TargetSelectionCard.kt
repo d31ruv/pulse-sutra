@@ -58,7 +58,7 @@ internal fun TargetSelectionCard(
             verticalAlignment = Alignment.Bottom,
         ) {
             Text(
-                text = stringResource(R.string.core_ui_choose_mantra),
+                text = stringResource(R.string.core_ui_repetition_target),
                 style = typography.labelSmall.copy(fontWeight = FontWeight.Bold),
                 color = colorScheme.primary,
             )
